@@ -1,16 +1,13 @@
 ﻿<Properties StartupConfiguration="{112A7213-CD30-4387-9A7B-D7E2EE95F9D6}|Default">
   <MonoDevelop.Ide.ItemProperties.Resume.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D6F4FDE2-ED0A-499D-BD44-2D09601EA8C4" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Renderers/LineEntryRenderer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Resume/Services/DataService.cs">
     <Files>
-      <File FileName="Resume/App.xaml.cs" Line="20" Column="1" />
-      <File FileName="iOS/Info.plist" />
-      <File FileName="Resume/ViewModels/LoginPageViewModel.cs" Line="9" Column="4" />
-      <File FileName="Resume/ViewModels/BaseViewModel.cs" Line="16" Column="20" />
-      <File FileName="Resume/Pages/LoginPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="Common/MyClass.cs" Line="1" Column="1" />
-      <File FileName="Common/Controls/LineEntry.cs" Line="27" Column="88" />
-      <File FileName="iOS/Renderers/LineEntryRenderer.cs" Line="4" Column="39" />
+      <File FileName="Resume/Controls/CompanyMap.cs" Line="23" Column="78" />
+      <File FileName="Common/Controls/LineEntry.cs" Line="13" Column="18" />
+      <File FileName="iOS/Main.cs" Line="21" Column="1" />
+      <File FileName="Resume/Models/WorkExperience.cs" Line="27" Column="31" />
+      <File FileName="Resume/Pages/WorkExperiencePage.xaml.cs" Line="9" Column="1" />
+      <File FileName="Resume/Services/DataService.cs" Line="111" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,11 +16,18 @@
             <Node name="Common" expanded="True">
               <Node name="Controls" expanded="True" />
             </Node>
-            <Node name="Resume.iOS" expanded="True">
-              <Node name="Renderers" expanded="True">
-                <Node name="LineEntryRenderer.cs" selected="True" />
+            <Node name="Resume" expanded="True">
+              <Node name="Controls" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="WorkExperiencePage.xaml" expanded="True" />
               </Node>
+              <Node name="Services" expanded="True">
+                <Node name="DataService.cs" selected="True" />
+              </Node>
+              <Node name="ViewModels" expanded="True" />
             </Node>
+            <Node name="Resume.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -31,7 +35,10 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/Manis/Projects/Resume/Resume/Controls/CompanyMap.cs" line="11" column="1" />
+      <Breakpoint file="/Users/Manis/Projects/Resume/Resume/Controls/CompanyMap.cs" line="12" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <DisabledProjects>

@@ -29,6 +29,21 @@ namespace Resume
 		{
 			Container.RegisterTypeForNavigation<LoginPage>();
 			Container.RegisterType<LoginPageViewModel>();
+
+			Container.RegisterTypeForNavigation<AboutMePage>();
+			Container.RegisterType<AboutMePageViewModel>();
+
+			Container.RegisterTypeForNavigation<QualificationsPage>();
+			Container.RegisterType<QualificationsPageViewModel>();
+
+			Container.RegisterTypeForNavigation<WorkExperiencePage>();
+			Container.RegisterType<WorkExperiencePageViewModel>();
+
+			Container.RegisterTypeForNavigation<ProjectDetailPage>();
+			Container.RegisterType<ProjectDetailPageViewModel>();
+
+			/**************** Service Instance Registration ***********/
+			Container.RegisterInstance<IDataService>(new DataService());
 		}
 
 		protected override void OnStart()

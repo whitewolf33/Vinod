@@ -52,7 +52,7 @@
 				<StackLayout Grid.Row="3" Grid.Column="0" Spacing="15" Padding="0,20">
 					<Label Text="Would you like to access this app?" Style="{StaticResource Label_SubHeader}" />
 					<Entry Style="{StaticResource Entry_Default}" Placeholder="Enter your email address" />
-					<Button Text="SUBMIT" Style="{StaticResource Button_Default}" />
+					<Button Text="SUBMIT" Style="{StaticResource Button_Default}" Command="{Binding RequestAccessCommand}" />
 				</StackLayout>
 			</Grid>
 		</ScrollView>

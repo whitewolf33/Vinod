@@ -122,6 +122,18 @@
     <Reference Include="Prism.Unity.Forms">
       <HintPath>..\packages\Prism.Unity.Forms.6.2.0\lib\Xamarin.iOS1.0\Prism.Unity.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="ModernHttpClient">
+      <HintPath>..\packages\modernhttpclient.2.4.2\lib\Xamarin.iOS10\ModernHttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps">
+      <HintPath>..\packages\Xamarin.Forms.Maps.2.3.2.127\lib\Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps.iOS">
+      <HintPath>..\packages\Xamarin.Forms.Maps.2.3.2.127\lib\Xamarin.iOS10\Xamarin.Forms.Maps.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Resume\Resume.csproj">
@@ -179,6 +191,27 @@
     <BundleResource Include="Resources\github.png" />
     <BundleResource Include="Resources\github%402x.png" />
     <BundleResource Include="Resources\github%403x.png" />
+    <BundleResource Include="Resources\microsoft.png" />
+    <BundleResource Include="Resources\microsoft%402x.png" />
+    <BundleResource Include="Resources\microsoft%403x.png" />
+    <BundleResource Include="Resources\rmit.png" />
+    <BundleResource Include="Resources\rmit%402x.png" />
+    <BundleResource Include="Resources\rmit%403x.png" />
+    <BundleResource Include="Resources\unimad.png" />
+    <BundleResource Include="Resources\unimad%402x.png" />
+    <BundleResource Include="Resources\unimad%403x.png" />
+    <BundleResource Include="Resources\xamuni.png" />
+    <BundleResource Include="Resources\xamuni%402x.png" />
+    <BundleResource Include="Resources\xamuni%403x.png" />
+    <BundleResource Include="Resources\thealth.png" />
+    <BundleResource Include="Resources\thealth%402x.png" />
+    <BundleResource Include="Resources\thealth%403x.png" />
+    <BundleResource Include="Resources\city.png" />
+    <BundleResource Include="Resources\city%402x.png" />
+    <BundleResource Include="Resources\city%403x.png" />
+    <BundleResource Include="Resources\fred.png" />
+    <BundleResource Include="Resources\fred%402x.png" />
+    <BundleResource Include="Resources\fred%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

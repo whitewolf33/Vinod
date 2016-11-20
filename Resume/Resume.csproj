@@ -32,6 +32,21 @@
     <EmbeddedResource Include="Pages\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\AboutMePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\QualificationsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\WorkExperiencePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ProjectDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QualificationsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -43,6 +58,36 @@
     </Compile>
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="Pages\AboutMePage.xaml.cs">
+      <DependentUpon>AboutMePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AboutMePageViewModel.cs" />
+    <Compile Include="ViewModels\QualificationsPageViewModel.cs" />
+    <Compile Include="Pages\QualificationsPage.xaml.cs">
+      <DependentUpon>QualificationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WorkExperiencePage.xaml.cs">
+      <DependentUpon>WorkExperiencePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\WorkExperiencePageViewModel.cs" />
+    <Compile Include="Pages\ProjectDetailPage.xaml.cs">
+      <DependentUpon>ProjectDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ProjectDetailPageViewModel.cs" />
+    <Compile Include="Views\QualificationsView.xaml.cs">
+      <DependentUpon>QualificationsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\QualificationsViewViewModel.cs" />
+    <Compile Include="Models\Qualification.cs" />
+    <Compile Include="Interfaces\IGroupable.cs" />
+    <Compile Include="Models\WorkExperience.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\GroupedDisplay.cs" />
+    <Compile Include="Services\DataService.cs" />
+    <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Utility\AppConfig.cs" />
+    <Compile Include="Interfaces\IDataService.cs" />
+    <Compile Include="Controls\CompanyMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
@@ -69,6 +114,9 @@
     <Reference Include="Prism.Unity.Forms">
       <HintPath>..\packages\Prism.Unity.Forms.6.2.0\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Prism.Unity.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Forms.Maps">
+      <HintPath>..\packages\Xamarin.Forms.Maps.2.3.2.127\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -76,6 +124,12 @@
   <ItemGroup>
     <Folder Include="Pages\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
+    <Folder Include="Models\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Services\" />
+    <Folder Include="Utility\" />
+    <Folder Include="Controls\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

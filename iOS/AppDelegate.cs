@@ -20,7 +20,7 @@ namespace Resume.iOS
 #endif
 
 			LoadApplication(new App());
-
+			Xamarin.FormsMaps.Init();
 			return base.FinishedLaunching(app, options);
 		}
 	}
