@@ -1,10 +1,12 @@
 using System.Collections.Generic;
-using Xamarin.Forms.Maps;
+using Common;
 
 namespace Resume
 {
-	public class WorkExperience
+	public class WorkExperience : IPage
 	{
+		public int Index { get; set; }
+
 		public string Company { get; set; }
 
 		public string Address { get; set; }

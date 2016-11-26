@@ -53,6 +53,7 @@ namespace Resume
 					List<WorkExperience> workExperiences = new List<WorkExperience>();
 					var telstra = new WorkExperience
 					{
+						Index = 1,
 						Company = "Telstra Health",
 						Address = " Level 3, 222, QV Building, Melbourne, VIC - 3000",
 						WorkPeriod = "Dec 2015 - CURRENT",
@@ -92,6 +93,7 @@ namespace Resume
 
 					var city = new WorkExperience
 					{
+						Index = 2,
 						Company = "City Holdings Aus Pty Ltd",
 						Address = " Level 3, 222, QV Building, Melbourne, VIC - 3000",
 						WorkPeriod = "Jun 2015 - Dec 2015",
@@ -105,6 +107,7 @@ namespace Resume
 
 					var fred = new WorkExperience
 					{
+						Index = 3,
 						Company = "FRED IT Group",
 						Address = " Level 3, 222, QV Building, Melbourne, VIC - 3000",
 						WorkPeriod = "Jan 2008 - Jun 2015",
@@ -117,6 +120,22 @@ namespace Resume
 					fred.Projects = fredProjects;
 
 					workExperiences.Add(fred);
+
+					var cadability = new WorkExperience
+					{
+						Index = 4,
+						Company = "Cadability Pty Ltd",
+						Address = " Level 3, 222, QV Building, Melbourne, VIC - 3000",
+						WorkPeriod = "Jan 2008 - Jun 2015",
+						Latitude = -37.7993071,
+						Longitude = 144.9976491,
+						CompanyLogo = "fred.png"
+					};
+
+					List<Project> cadProjects = new List<Project>();
+					cadability.Projects = cadProjects;
+
+					workExperiences.Add(cadability);
 
 					return workExperiences;
 				}

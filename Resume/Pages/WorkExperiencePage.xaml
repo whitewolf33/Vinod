@@ -1,42 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.WorkExperiencePage" 
-		xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="true" 
-		xmlns:local="clr-namespace:Resume;assembly=Resume" 
-		BackgroundImage="background.png" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" ItemsSource="{Binding WorkExperieneList}">
+<CarouselPage x:Name="carouselPage" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.WorkExperiencePage" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="true" xmlns:local="clr-namespace:Resume;assembly=Resume" xmlns:common="clr-namespace:Common;assembly=Common" BackgroundImage="background.png" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+	ItemsSource="{Binding WorkExperieneList}">
 	<CarouselPage.ItemTemplate>
-        <DataTemplate>
-            <ContentPage  BackgroundColor="Transparent">
-				<Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,10,10,0">
-					<Grid.RowDefinitions>
-						<RowDefinition Height="*" />
-						<RowDefinition Height="20" />
-					</Grid.RowDefinitions>
-					
-					<Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#D8D8D8" Opacity="0.30" HasShadow="false" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-					<Grid Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,15">
-						 <Grid.RowDefinitions>
-						 	<RowDefinition Height="100" />
-							<RowDefinition Height="150" />
+		<DataTemplate>
+			<ContentPage BackgroundColor="Transparent" >
+				<AbsoluteLayout Padding="0">
+					<Grid Padding="10,10,10,40" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*" />
 						</Grid.RowDefinitions>
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="150"/>
-							<ColumnDefinition Width="*" />
-						</Grid.ColumnDefinitions>
-						<StackLayout Grid.Row="0" Grid.Column="0" Spacing="10">
-							<Image Source="{Binding CompanyLogo}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" WidthRequest="80"/>
-							<Label Text="{Binding WorkPeriod}" HorizontalOptions="FillAndExpand" Style="{StaticResource Label_Default}" />
-						</StackLayout>
-						<StackLayout Grid.Row="0" Grid.Column="1" Spacing="10">
-							<Label Style="{StaticResource Label_Header}" Text="{Binding Company}"/>
-							<Label Style="{StaticResource Label_Default}" Text="{Binding Address}" HeightRequest="40" />
-						</StackLayout>
-						 <local:CompanyMap Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="MyMap" IsShowingUser="true" MapType="Street" Margin="-10,0" CompanyLocation="{Binding CompanyLocation}"/>
+						<Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#D8D8D8" Opacity="0.30" HasShadow="false" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+						<Grid Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,15">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="100" />
+								<RowDefinition Height="150" />
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="150" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<StackLayout Grid.Row="0" Grid.Column="0" Spacing="10">
+								<Image Source="{Binding CompanyLogo}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" WidthRequest="80" />
+								<Label Text="{Binding WorkPeriod}" HorizontalOptions="FillAndExpand" Style="{StaticResource Label_Default}" />
+							</StackLayout>
+							<StackLayout Grid.Row="0" Grid.Column="1" Spacing="10">
+								<Label Style="{StaticResource Label_Header}" Text="{Binding Company}" />
+								<Label Style="{StaticResource Label_Default}" Text="{Binding Address}" HeightRequest="40" />
+							</StackLayout>
+							<local:CompanyMap Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="MyMap" IsShowingUser="false" MapType="Street" Margin="-10,0" CompanyLocation="{Binding CompanyLocation}" />
+							<BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="300" />
+						</Grid>
+						<!--	<StackLayout Grid.Row="0" Grid.Column="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="End">
+								<common:PageIndicatorView Index="{Binding Index}" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="{Binding Path=BindingContext.PageIndicatorHeight, Source={x:Reference carouselPage}}" Pages="{Binding Path=BindingContext.Pages, Source={x:Reference carouselPage}}" />
+							</StackLayout>-->
 					</Grid>
-					<StackLayout Grid.Row="1" Grid.Column="0" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
-						
-					</StackLayout>	
-					</Grid>
+					<StackLayout Padding="0" AbsoluteLayout.LayoutBounds="0.5,1,1,0.10" AbsoluteLayout.LayoutFlags="All">
+						<common:PageIndicatorView Rotation="270" Index="{Binding Index}" VerticalOptions="Center" Pages="{Binding Path=BindingContext.Pages, Source={x:Reference carouselPage}}" />
+					</StackLayout>
+				</AbsoluteLayout>
 			</ContentPage>
-        </DataTemplate>
-    </CarouselPage.ItemTemplate>
+		</DataTemplate>
+	</CarouselPage.ItemTemplate>
 </CarouselPage>

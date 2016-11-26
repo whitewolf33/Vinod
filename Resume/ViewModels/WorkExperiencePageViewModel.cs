@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using Prism.Navigation;
 using Xamarin.Forms;
 using Microsoft.Practices.Unity;
+using System.Linq;
+using Common;
 
 namespace Resume
 {
@@ -20,7 +22,24 @@ namespace Resume
 			set
 			{
 				workExperieneList = value;
+				OnPropertyChanged("Pages");
 				OnPropertyChanged("WorkExperieneList");
+			}
+		}
+
+		public List<IPage> Pages
+		{
+			get
+			{
+				return WorkExperieneList.Cast<IPage>().ToList();
+			}
+		}
+
+		public int PageIndicatorHeight
+		{
+			get
+			{
+				return workExperieneList != null ? workExperieneList.Count * 20 : 20;
 			}
 		}
 
