@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView Padding="0" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Common.PageIndicatorView" 
+		x:Name="pageIndicatorView" xmlns:local="clr-namespace:Common;assembly=Common">
+	<ContentView.Resources>
+		<ResourceDictionary>
+			<local:PageIndicatorToColorConverter x:Key="pageIndicatorToColorConverter" SuccessColor="White" FailureColor="Transparent"/>
+		</ResourceDictionary>
+</ContentView.Resources>
+<ContentView.Content>
+	<ListView x:Name="horizontalListView" BackgroundColor="Transparent" ItemsSource="{Binding Path=Pages, Source={x:Reference pageIndicatorView}}" 
+				SeparatorVisibility="None" RowHeight="15">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ContentView Rotation="90" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="10" WidthRequest="10">
+              <local:RoundedBoxView VerticalOptions="FillAndExpand" WidthRequest="10" HeightRequest="10" CornerRadius="5" BackgroundColor="White"
+							Color="{Binding Index, Converter={StaticResource pageIndicatorToColorConverter}, ConverterParameter={Binding Source={x:Reference pageIndicatorView}}}"/>
+
+              </ContentView>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+</ContentView.Content>
+</ContentView>

@@ -36,11 +36,19 @@
     <Compile Include="Helpers\MyInsights.cs" />
     <Compile Include="Interfaces\IReportingService.cs" />
     <Compile Include="Interfaces\IMethodDecorator.cs" />
+    <Compile Include="Converters\PageIndicatorToColorConverter.cs" />
+    <Compile Include="Views\PageIndicatorView.xaml.cs">
+      <DependentUpon>PageIndicatorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RoundedBoxView.cs" />
+    <Compile Include="Interfaces\IPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
     <Folder Include="Helpers\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -70,6 +78,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PageIndicatorView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
