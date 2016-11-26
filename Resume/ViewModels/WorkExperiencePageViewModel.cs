@@ -43,6 +43,26 @@ namespace Resume
 			}
 		}
 
+		Project selectedProject;
+		public Project SelectedProject
+		{
+			get
+			{
+				return selectedProject;
+			}
+
+			set
+			{
+				selectedProject = value;
+				if (value != null)
+				{
+					NavigationParameters navParam = new NavigationParameters();
+					navParam.Add("Project", value);
+					NavigationService.NavigateAsync("ProjectDetailPage", navParam);
+				}
+			}
+		}
+
 		public WorkExperiencePageViewModel(INavigationService navigationService) : base(navigationService)
 		{
 			Task.Run(async () =>

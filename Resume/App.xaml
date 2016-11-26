@@ -97,7 +97,13 @@ xmlns:clr="clr-namespace:System;assembly=mscorlib" xmlns:prism="clr-namespace:Pr
 			<Style x:Key="Image_GitHub" TargetType="Image" BasedOn="{StaticResource Image_Social}">
 				<Setter Property="Source" Value="github.png" />
 			</Style>
-			<!-- END IMAGEVIEW STYLES -->
+			<Style x:Key="Image_Chevron" TargetType="Image">
+				<Setter Property="HorizontalOptions" Value="Center" />
+				<Setter Property="VerticalOptions" Value="Center" />
+				<Setter Property="Source" Value="chevron.png" />
+				<Setter Property="WidthRequest" Value="10" />
+				<Setter Property="HeightRequest" Value="15" />
+			</Style>
 			<Style x:Key="Image_Profile" TargetType="Image">
 				<Setter Property="Source" Value="profile.png" />
 				<Setter Property="HeightRequest" Value="144" />
@@ -105,6 +111,7 @@ xmlns:clr="clr-namespace:System;assembly=mscorlib" xmlns:prism="clr-namespace:Pr
 				<Setter Property="HorizontalOptions" Value="Center" />
 				<Setter Property="VerticalOptions" Value="Center" />
 			</Style>
+			<!-- END IMAGEVIEW STYLES -->
 			</ResourceDictionary>
 	</prism:PrismApplication.Resources>
 </prism:PrismApplication>

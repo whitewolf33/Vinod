@@ -65,6 +65,9 @@ namespace Resume
 
 					Project cpc = new Project();
 					cpc.Name = "Care Plan Connect";
+					cpc.Logo = "cpc.png";
+					cpc.Duration = "Dec 2015 - June 2016";
+
 					cpc.ShortDescription = "iOS and Android App";
 					cpc.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
 					cpc.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
@@ -73,6 +76,9 @@ namespace Resume
 
 					Project cc = new Project();
 					cc.Name = "Consumer Channel";
+					cc.Logo = "consumerchannel.png";
+					cc.Duration = "July 2016 - September 2016";
+
 					cc.ShortDescription = "iOS and Android App";
 					cc.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
 					cc.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
@@ -81,11 +87,13 @@ namespace Resume
 
 					Project hg = new Project();
 					hg.Name = "HealthGateway";
+					hg.Logo = "healthgateway.png";
+					hg.Duration = "September 2016 - Till date";
 					hg.ShortDescription = "iOS and Android App";
 					hg.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
 					hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
 					hg.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
-					projects.Add(cc);
+					projects.Add(hg);
 
 					telstra.Projects = projects;
 

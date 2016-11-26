@@ -13,5 +13,7 @@ namespace Resume
 		public string Technology { get; set; }
 
 		public string Responsibility { get; set; }
+
+		public string Logo { get; set; }
 	}
 }

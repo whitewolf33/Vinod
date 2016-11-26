@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.ProjectDetailPage" 
-		xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="true" xmlns:common="clr-namespace:Common;assembly=Common" BackgroundImage="background.png">
+		xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="true" xmlns:common="clr-namespace:Common;assembly=Common" BackgroundImage="background.png"
+		Title="Projects">
 	<ContentPage.Content>
+		<Grid Padding="10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#D8D8D8" Opacity="0.30" HasShadow="false" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="10,15,10,10" />
+			<Grid Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,15,10,10" RowSpacing="20">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="100" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+				<Grid Grid.Row="0" Grid.Column="0" Padding="0" ColumnSpacing="25" RowSpacing="0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="100" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="30" />
+						<RowDefinition Height="20" />
+						<RowDefinition Height="20" />
+					</Grid.RowDefinitions>
+					<Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Source="{Binding Project.Logo}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+					<Label Grid.Row="0" Grid.Column="1" Style="{StaticResource Label_Header}" Text="{Binding Project.Name}" />
+					<Label Grid.Row="1" Grid.Column="1" Style="{StaticResource Label_Default}" Text="{Binding Project.ShortDescription}" />
+					<Label Grid.Row="2" Grid.Column="1" Style="{StaticResource Label_Default}" Text="{Binding Project.Duration}" />
+				</Grid>
+				<StackLayout Grid.Row="1" Grid.Column="0" Spacing="10">
+					<Label Style="{StaticResource Label_Default}" Text="{Binding Project.Description}" />
+					<BoxView Style="{StaticResource BoxView_Dividor}" HeightRequest="1" VerticalOptions="End" Margin="-10,0" />
+				</StackLayout>
+				<StackLayout Grid.Row="2" Grid.Column="0" Spacing="10">
+					<Label Style="{StaticResource Label_SubHeader}" Text="TECHNOLOGY STACK" />
+					<Label Style="{StaticResource Label_Default}" Text="{Binding Project.Technology}" />
+					<BoxView Style="{StaticResource BoxView_Dividor}" HeightRequest="1" VerticalOptions="End" Margin="-10,0" />
+				</StackLayout>
+				<StackLayout Grid.Row="3" Grid.Column="0" Spacing="10">
+					<Label Style="{StaticResource Label_SubHeader}" Text="RESPONSIBILITIES" />
+					<Label Style="{StaticResource Label_Default}" Text="{Binding Project.Responsibility}" />
+					<BoxView Style="{StaticResource BoxView_Dividor}" HeightRequest="1" VerticalOptions="End" Margin="-10,0" />
+				</StackLayout>
+			</Grid>
+		</Grid>
 	</ContentPage.Content>
 </ContentPage>
