@@ -8,8 +8,8 @@
 </ContentView.Resources>
 <ContentView.Content>
 	<ListView x:Name="horizontalListView" BackgroundColor="Transparent" ItemsSource="{Binding Path=Pages, Source={x:Reference pageIndicatorView}}" 
-				SeparatorVisibility="None" RowHeight="15" InputTransparent="true">
-      <ListView.ItemTemplate>
+SeparatorVisibility="None" RowHeight="15" InputTransparent="true">
+<ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
             <ContentView Rotation="90" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="10" WidthRequest="10">
