@@ -16,11 +16,11 @@
 					</Grid.ColumnDefinitions>
 					<Image Style="{StaticResource Image_Profile}" HorizontalOptions="Center" VerticalOptions="Center" />
 					<StackLayout Grid.Row="0" Grid.Column="1" Spacing="20">
-						<Image Style="{StaticResource Image_Email}" />
-						<Image Style="{StaticResource Image_Facebook}" />
-						<Image Style="{StaticResource Image_LinkedIn}" />
-						<Image Style="{StaticResource Image_Twitter}" />
-						<Image Style="{StaticResource Image_GitHub}" />
+						<Button Style="{StaticResource Button_Email}" Command="{Binding OpenSocialCommand}" CommandParameter="Email" />
+						<Button Style="{StaticResource Button_Facebook}" Command="{Binding OpenSocialCommand}" CommandParameter="Facebook" />
+						<Button Style="{StaticResource Button_LinkedIn}" Command="{Binding OpenSocialCommand}" CommandParameter="LinkedIn" />
+						<Button Style="{StaticResource Button_Twitter}" Command="{Binding OpenSocialCommand}" CommandParameter="Twitter" />
+						<Button Style="{StaticResource Button_GitHub}" Command="{Binding OpenSocialCommand}" CommandParameter="GitHub" />
 					</StackLayout>
 				</Grid>
 				<StackLayout Grid.Row="1" Grid.Column="0" Padding="0" Spacing="10">

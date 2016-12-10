@@ -8,7 +8,6 @@ namespace Resume
 		{
 			InitializeComponent();
 			NavigationPage.SetBackButtonTitle(this, string.Empty);
-
 		}
 	}
 }

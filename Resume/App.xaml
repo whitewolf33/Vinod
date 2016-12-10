@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-xmlns:clr="clr-namespace:System;assembly=mscorlib" xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms" 
-		x:Class="Resume.App">
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:clr="clr-namespace:System;assembly=mscorlib" xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms" x:Class="Resume.App">
 	<prism:PrismApplication.Resources>
 		<ResourceDictionary>
-		<!-- Application resource dictionary -->
+			<!-- Application resource dictionary -->
 			<Color x:Key="AppPrimaryColor">#FFFFFF</Color>
 			<Color x:Key="AppSecondaryColor">#E13B4D</Color>
-
 			<!-- Navbar Color -->
 			<Color x:Key="AppTertiaryColor">#161F3D</Color>
 			<Color x:Key="NavBarBackgroundColor">#161F3D</Color>
 			<Color x:Key="NavBarTextColor">#FFFFFF</Color>
-
 			<Color x:Key="AppTextColor">#FFFFFF</Color>
 			<Color x:Key="AppHighlightColor">#E13B4D</Color>
-
-
 			<!-- START LABEL STYLES -->
-			
 			<Style x:Key="Label_Default" TargetType="Label">
 				<Setter Property="BackgroundColor" Value="Transparent" />
 				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
@@ -27,18 +20,14 @@ xmlns:clr="clr-namespace:System;assembly=mscorlib" xmlns:prism="clr-namespace:Pr
 				<Setter Property="TextColor" Value="{StaticResource AppTextColor}" />
 				<Setter Property="FontSize" Value="14" />
 			</Style>
-			
 			<Style x:Key="Label_SubHeader" TargetType="Label" BasedOn="{StaticResource Label_Default}">
 				<Setter Property="FontSize" Value="18" />
-			</Style>	
-
+			</Style>
 			<Style x:Key="Label_Header" TargetType="Label" BasedOn="{StaticResource Label_Default}">
 				<Setter Property="FontSize" Value="20" />
 				<Setter Property="FontFamily" Value="Roboto-Bold" />
 			</Style>
-
 			<!-- END LABEL STYLES -->
-
 			<!-- START BUTTON STYLES -->
 			<Style x:Key="Button_Default" TargetType="Button">
 				<Setter Property="HorizontalOptions" Value="Center" />
@@ -51,12 +40,28 @@ xmlns:clr="clr-namespace:System;assembly=mscorlib" xmlns:prism="clr-namespace:Pr
 				<Setter Property="TextColor" Value="{StaticResource AppTextColor}" />
 				<Setter Property="FontFamily" Value="Roboto-Bold" />
 			</Style>
-
-			
+			<Style x:Key="Button_Social" TargetType="Button">
+				<Setter Property="HeightRequest" Value="30" />
+				<Setter Property="WidthRequest" Value="30" />
+				<Setter Property="HorizontalOptions" Value="End" />
+			</Style>
+			<Style x:Key="Button_Email" TargetType="Button" BasedOn="{StaticResource Button_Social}">
+				<Setter Property="Image" Value="email.png" />
+			</Style>
+			<Style x:Key="Button_Facebook" TargetType="Button" BasedOn="{StaticResource Button_Social}">
+				<Setter Property="Image" Value="facebook.png" />
+			</Style>
+			<Style x:Key="Button_LinkedIn" TargetType="Button" BasedOn="{StaticResource Button_Social}">
+				<Setter Property="Image" Value="linkedin.png" />
+			</Style>
+			<Style x:Key="Button_Twitter" TargetType="Button" BasedOn="{StaticResource Button_Social}">
+				<Setter Property="Image" Value="twitter.png" />
+			</Style>
+			<Style x:Key="Button_GitHub" TargetType="Button" BasedOn="{StaticResource Button_Social}">
+				<Setter Property="Image" Value="github.png" />
+			</Style>
 			<!-- END BUTTON STYLES -->
-
 			<!-- START ENTRY STYLES -->
-
 			<Style x:Key="Entry_Default" TargetType="Entry">
 				<Setter Property="FontFamily" Value="Roboto-Regular" />
 				<Setter Property="TextColor" Value="{StaticResource AppTertiaryColor}" />
@@ -64,8 +69,6 @@ xmlns:clr="clr-namespace:System;assembly=mscorlib" xmlns:prism="clr-namespace:Pr
 				<Setter Property="HeightRequest" Value="45" />
 			</Style>
 			<!-- END ENTRY STYLES -->
-
-
 			<!-- START BOXVIEW STYLES -->
 			<Style x:Key="BoxView_Dividor" TargetType="BoxView">
 				<Setter Property="Color" Value="{StaticResource AppHighlightColor}" />
@@ -73,30 +76,8 @@ xmlns:clr="clr-namespace:System;assembly=mscorlib" xmlns:prism="clr-namespace:Pr
 				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
 				<Setter Property="Opacity" Value="0.50" />
 			</Style>
-
 			<!-- END BOXVIEW STYLES -->
-
 			<!-- START IMAGEVIEW STYLES -->
-			<Style x:Key="Image_Social" TargetType="Image">
-				<Setter Property="HeightRequest" Value="30" />
-				<Setter Property="WidthRequest" Value="30" />
-				<Setter Property="HorizontalOptions" Value="End" />
-			</Style>
-			<Style x:Key="Image_Email" TargetType="Image" BasedOn="{StaticResource Image_Social}">
-				<Setter Property="Source" Value="email.png" />
-			</Style>
-			<Style x:Key="Image_Facebook" TargetType="Image" BasedOn="{StaticResource Image_Social}">
-				<Setter Property="Source" Value="facebook.png" />
-			</Style>
-			<Style x:Key="Image_LinkedIn" TargetType="Image" BasedOn="{StaticResource Image_Social}">
-				<Setter Property="Source" Value="linkedin.png" />
-			</Style>
-			<Style x:Key="Image_Twitter" TargetType="Image" BasedOn="{StaticResource Image_Social}">
-				<Setter Property="Source" Value="twitter.png" />
-			</Style>
-			<Style x:Key="Image_GitHub" TargetType="Image" BasedOn="{StaticResource Image_Social}">
-				<Setter Property="Source" Value="github.png" />
-			</Style>
 			<Style x:Key="Image_Chevron" TargetType="Image">
 				<Setter Property="HorizontalOptions" Value="Center" />
 				<Setter Property="VerticalOptions" Value="Center" />
@@ -112,6 +93,6 @@ xmlns:clr="clr-namespace:System;assembly=mscorlib" xmlns:prism="clr-namespace:Pr
 				<Setter Property="VerticalOptions" Value="Center" />
 			</Style>
 			<!-- END IMAGEVIEW STYLES -->
-			</ResourceDictionary>
+		</ResourceDictionary>
 	</prism:PrismApplication.Resources>
 </prism:PrismApplication>
