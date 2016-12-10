@@ -30,7 +30,6 @@ namespace Resume.iOS
 					DrawBorder(view);
 					//SetFontSize(view);
 					SetPlaceholderTextColor(view);
-					//Control.Font = UIFont.SystemFontOfSize(14f);
 
 				}
 			}

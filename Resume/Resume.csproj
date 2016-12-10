@@ -88,6 +88,8 @@
     <Compile Include="Utility\AppConfig.cs" />
     <Compile Include="Interfaces\IDataService.cs" />
     <Compile Include="Controls\CompanyMap.cs" />
+    <Compile Include="Controls\NavigationPageEx.cs" />
+    <Compile Include="Controls\ListViewEx.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">

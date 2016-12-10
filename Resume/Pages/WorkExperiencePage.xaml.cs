@@ -7,6 +7,8 @@ namespace Resume
 		public WorkExperiencePage()
 		{
 			InitializeComponent();
+			NavigationPage.SetBackButtonTitle(this, string.Empty);
+
 		}
 	}
 }

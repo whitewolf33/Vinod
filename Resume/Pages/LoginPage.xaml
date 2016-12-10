@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.LoginPage" 
-		xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="true" Title="Vinod Srinivasan" 
-		BackgroundImage="background.png" xmlns:common="clr-namespace:Common;assembly=Common">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.LoginPage" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="true" Title="Vinod Srinivasan" BackgroundImage="background.png" xmlns:common="clr-namespace:Common;assembly=Common">
 	<ContentPage.Content>
 		<ScrollView Padding="0">
 			<Grid Padding="20" RowSpacing="10">
@@ -28,24 +26,31 @@
 				<StackLayout Grid.Row="1" Grid.Column="0" Padding="0" Spacing="10">
 					<Label Text="Enter access code to continue..." Style="{StaticResource Label_SubHeader}" HeightRequest="25" />
 					<StackLayout Padding="0" Spacing="10" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-						<Frame HeightRequest="50" WidthRequest="50" BackgroundColor="White" HasShadow="false" Padding="0" >
-							<common:LineEntry HeightRequest="25" WidthRequest="25" Style="{StaticResource Entry_Default}" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="A"/>
+						<Frame HeightRequest="50" WidthRequest="50" BackgroundColor="White" HasShadow="false" Padding="0">
+							<common:LineEntry IsPassword="true" x:Name="codeOne" HeightRequest="25" WidthRequest="25" Style="{StaticResource Entry_Default}" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"
+								Text="{Binding CodeOne}" Placeholder="A" />
 						</Frame>
 						<Frame HeightRequest="50" WidthRequest="50" BackgroundColor="White" HasShadow="false" Padding="0">
-							<common:LineEntry HeightRequest="25" WidthRequest="25" Style="{StaticResource Entry_Default}" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"  Placeholder="C"/>
+							<common:LineEntry IsPassword="true" x:Name="codeTwo" HeightRequest="25" WidthRequest="25" Style="{StaticResource Entry_Default}" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"
+								Text="{Binding CodeTwo}" Placeholder="C" />
 						</Frame>
 						<Frame HeightRequest="50" WidthRequest="50" BackgroundColor="White" HasShadow="false" Padding="0">
-							<common:LineEntry HeightRequest="25" WidthRequest="20" Style="{StaticResource Entry_Default}" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"  Placeholder="C"/>
+							<common:LineEntry IsPassword="true" x:Name="codeThree" HeightRequest="25" WidthRequest="20" Style="{StaticResource Entry_Default}" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"
+								Text="{Binding CodeThree}" Placeholder="C" />
 						</Frame>
 						<Frame HeightRequest="50" WidthRequest="50" BackgroundColor="White" HasShadow="false" Padding="0">
-							<common:LineEntry HeightRequest="25" WidthRequest="25" Style="{StaticResource Entry_Default}" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"  Placeholder="E"/>
+							<common:LineEntry IsPassword="true" x:Name="codeFour" HeightRequest="25" WidthRequest="25" Style="{StaticResource Entry_Default}" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"
+								Text="{Binding CodeFour}" Placeholder="E" />
 						</Frame>
 						<Frame HeightRequest="50" WidthRequest="50" BackgroundColor="White" HasShadow="false" Padding="0">
-							<common:LineEntry HeightRequest="25" WidthRequest="25" Style="{StaticResource Entry_Default}" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"  Placeholder="S"/>
+							<common:LineEntry IsPassword="true" x:Name="codeFive" HeightRequest="25" WidthRequest="25" Style="{StaticResource Entry_Default}" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"
+								Text="{Binding CodeFive}" Placeholder="S" />
 						</Frame>
 						<Frame HeightRequest="50" WidthRequest="50" BackgroundColor="White" HasShadow="false" Padding="0">
-							<common:LineEntry HeightRequest="25" WidthRequest="25" Style="{StaticResource Entry_Default}" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"  Placeholder="S"/>
+							<common:LineEntry IsPassword="true" x:Name="codeSix" HeightRequest="25" WidthRequest="25" Style="{StaticResource Entry_Default}" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"
+								Text="{Binding CodeSix}" Placeholder="S" />
 						</Frame>
+						<Button x:Name="buttonAuthenticate" IsVisible="false" Command="{Binding AuthenticateCommand}" />
 					</StackLayout>
 				</StackLayout>
 				<BoxView Grid.Row="2" Grid.Column="0" Style="{StaticResource BoxView_Dividor}" VerticalOptions="End" />

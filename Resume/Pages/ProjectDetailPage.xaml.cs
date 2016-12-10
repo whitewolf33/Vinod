@@ -10,6 +10,7 @@ namespace Resume
 		public ProjectDetailPage()
 		{
 			InitializeComponent();
+			NavigationPage.SetBackButtonTitle(this, String.Empty);
 		}
 	}
 }
