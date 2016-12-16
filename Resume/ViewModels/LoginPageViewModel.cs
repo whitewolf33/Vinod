@@ -15,7 +15,7 @@ namespace Resume
 		{
 			AuthenticateCommand = new DelegateCommand(() => { });
 
-			RequestAccessCommand = new DelegateCommand(() => NavigationService.NavigateAsync("WorkExperiencePage"));
+			RequestAccessCommand = new DelegateCommand(() => App.Current.MainPage = RootPage.Instance);
 		}
 	}
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.RootPage" 
+		xmlns:local="clr-namespace:Resume;assembly=Resume" xmlns:common="clr-namespace:Common;assembly=Common">
+<MasterDetailPage.Master>
+        <local:MenuPage x:Name="masterPage" />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+		 <NavigationPage BarTextColor="{StaticResource NavBarTextColor}" BarBackgroundColor="{StaticResource NavBarBackgroundColor}">
+            <x:Arguments>
+                <local:AboutMePage />
+            </x:Arguments>
+        </NavigationPage>
+		</MasterDetailPage.Detail>
+</MasterDetailPage>

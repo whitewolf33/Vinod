@@ -30,6 +30,9 @@ namespace Resume
 			Container.RegisterTypeForNavigation<LoginPage>();
 			Container.RegisterType<LoginPageViewModel>();
 
+			Container.RegisterTypeForNavigation<MenuPage>();
+			Container.RegisterType<MenuPageViewModel>();
+
 			Container.RegisterTypeForNavigation<AboutMePage>();
 			Container.RegisterType<AboutMePageViewModel>();
 
