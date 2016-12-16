@@ -9,7 +9,6 @@ namespace Resume
 	{
 		public ListView ListView { get { return listView; } }
 
-
 		public MenuPage()
 		{
 			InitializeComponent();

@@ -40,9 +40,38 @@ namespace Resume
 
 			OpenSocialCommand = new DelegateCommand<string>((arg) =>
 			{
-				Device.OpenUri(new Uri("fb://page/nodlet"));
+				switch (arg.ToLower())
+				{
+					case "facebook":
+						{
+							Device.OpenUri(new Uri("fb://profile/609722353"));
+							break;
+						}
+					case "twitter":
+						{
+							Device.OpenUri(new Uri("twitter://user?id=vsrinivasan33"));
+							break;
+						}
+
+					case "linkedin":
+						{
+							Device.OpenUri(new Uri("linkedin://profile/vsrinivasan33"));
+							break;
+						}
+					case "github":
+						{
+							OpenWebsiteCommand.Execute("https://github.com/whitewolf33");
+							break;
+						}
+					case "email":
+						{
+							Device.OpenUri(new Uri("mailto:itsmevinod@yahoo.com"));
+						}
+						break;
+				}
 
 			});
+
 		}
 
 		#region INavigationAware Implementation
