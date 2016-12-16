@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CarouselPage x:Name="carouselPage" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-		x:Class="Resume.WorkExperiencePage" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="true" 
-		xmlns:local="clr-namespace:Resume;assembly=Resume" xmlns:common="clr-namespace:Common;assembly=Common" BackgroundImage="background.png" 
-		xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" Title="Work Experience"
-	ItemsSource="{Binding WorkExperieneList}">
+<CarouselPage x:Name="carouselPage" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.WorkExperiencePage" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="true" xmlns:local="clr-namespace:Resume;assembly=Resume" xmlns:common="clr-namespace:Common;assembly=Common" BackgroundImage="background.png" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+	Title="Work Experience" ItemsSource="{Binding WorkExperieneList}">
 	<CarouselPage.ItemTemplate>
 		<DataTemplate>
-			<ContentPage BackgroundColor="Transparent" >
+			<ContentPage BackgroundColor="Transparent">
 				<AbsoluteLayout Padding="0">
 					<Grid Padding="10,10,10,40" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 						<Grid.RowDefinitions>
 							<RowDefinition Height="*" />
 						</Grid.RowDefinitions>
-						<Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#D8D8D8" Opacity="0.30" HasShadow="false" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="10,15,10,10"/>
+						<Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#D8D8D8" Opacity="0.30" HasShadow="false" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="10,15,10,10" />
 						<Grid Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,15,10,10">
 							<Grid.RowDefinitions>
 								<RowDefinition Height="100" />
@@ -35,11 +32,9 @@
 							<StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="-10,0" Padding="0" VerticalOptions="FillAndExpand">
 								<StackLayout Padding="10,0">
 									<Label Style="{StaticResource Label_Header}" Text="PROJECTS" HeightRequest="30" />
-									<BoxView Style="{StaticResource BoxView_Dividor}" HeightRequest="1" VerticalOptions="End" Margin="-10,0"/>
+									<BoxView Style="{StaticResource BoxView_Dividor}" HeightRequest="1" VerticalOptions="End" Margin="-10,0" />
 								</StackLayout>
-								<ListView VerticalOptions="FillAndExpand" RowHeight="70" 
-										x:Name="horizontalListView" BackgroundColor="Transparent" ItemsSource="{Binding Path=Projects}" 
-										SeparatorVisibility="None" SelectedItem="{Binding Path=BindingContext.SelectedProject, Source={x:Reference carouselPage}}" >
+								<local:ListViewEx VerticalOptions="FillAndExpand" RowHeight="70" x:Name="projectListView" BackgroundColor="Transparent" ItemsSource="{Binding Path=Projects}" SeparatorVisibility="None" SelectedItem="{Binding Path=BindingContext.SelectedProject, Source={x:Reference carouselPage}}">
 									<ListView.ItemTemplate>
 										<DataTemplate>
 											<ViewCell>
@@ -59,12 +54,12 @@
 														<Label Grid.Row="1" Grid.Column="1" Style="{StaticResource Label_Default}" Text="{Binding Duration}" />
 														<Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Style="{StaticResource Image_Chevron}" />
 													</Grid>
-													<BoxView Style="{StaticResource BoxView_Dividor}" HeightRequest="1" VerticalOptions="End"/>
+													<BoxView Style="{StaticResource BoxView_Dividor}" HeightRequest="1" VerticalOptions="End" />
 												</StackLayout>
 											</ViewCell>
 										</DataTemplate>
 									</ListView.ItemTemplate>
-								</ListView>
+								</local:ListViewEx>
 							</StackLayout>
 						</Grid>
 					</Grid>

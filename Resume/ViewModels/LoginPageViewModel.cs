@@ -1,6 +1,7 @@
 ﻿using System;
 using Prism.Commands;
 using Prism.Navigation;
+using Xamarin.Forms;
 
 namespace Resume
 {
@@ -13,7 +14,10 @@ namespace Resume
 
 		public LoginPageViewModel(INavigationService navigationService) : base(navigationService)
 		{
-			AuthenticateCommand = new DelegateCommand(() => { });
+			AuthenticateCommand = new DelegateCommand(() =>
+			{
+				NavigationService.NavigateAsync("http://resume.vinod.com.au/NavigationPageEx/WorkExperiencePage");
+			});
 
 			RequestAccessCommand = new DelegateCommand(() => App.Current.MainPage = RootPage.Instance);
 		}

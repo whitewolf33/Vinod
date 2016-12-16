@@ -11,13 +11,7 @@ namespace Resume
 		public App()
 		{
 			InitializeComponent();
-
-			NavigationPage navPage = new NavigationPage(new LoginPage())
-			{
-				BarBackgroundColor = (Color)Application.Current.Resources["NavBarBackgroundColor"],
-				BarTextColor = (Color)Application.Current.Resources["NavBarTextColor"]
-			};
-			MainPage = navPage;
+			NavigationService.NavigateAsync("NavigationPageEx/LoginPage");
 		}
 
 		protected override void OnInitialized()
@@ -45,8 +39,11 @@ namespace Resume
 			Container.RegisterTypeForNavigation<ProjectDetailPage>();
 			Container.RegisterType<ProjectDetailPageViewModel>();
 
-			/**************** Service Instance Registration ***********/
+			Container.RegisterTypeForNavigation<NavigationPageEx>();
+
+			/**************** Instance Registration ***********/
 			Container.RegisterInstance<IDataService>(new DataService());
+
 		}
 
 		protected override void OnStart()
