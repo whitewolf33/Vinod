@@ -52,7 +52,7 @@ namespace Resume
 			{
 				Title = "Technical Skills",
 				Icon = "skills.png",
-				Target = typeof(ProjectDetailPage)
+				Target = typeof(TechnicalSkillsPage)
 			});
 			masterPageItems.Add(new MenuItem
 			{

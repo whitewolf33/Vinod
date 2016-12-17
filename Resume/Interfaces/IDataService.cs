@@ -8,5 +8,7 @@ namespace Resume
 		Task<List<GroupedDisplay>> GetQualifications();
 
 		Task<List<WorkExperience>> GetWorkExperiences();
+
+		Task<List<GroupedDisplay>> GetTechnicalSkills();
 	}
 }

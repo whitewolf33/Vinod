@@ -43,6 +43,93 @@ namespace Resume
 
 		}
 
+		public async Task<List<GroupedDisplay>> GetTechnicalSkills()
+		{
+			return await Task.Run(() =>
+			{
+				GroupedDisplay programGroup = new GroupedDisplay { GroupName = "Programming Language" };
+				programGroup.Add(new TechnicalSkills { Name = "C#" });
+				programGroup.Add(new TechnicalSkills { Name = "Objective C" });
+
+				GroupedDisplay scriptGroup = new GroupedDisplay { GroupName = "Scripting Language" };
+				scriptGroup.Add(new TechnicalSkills { Name = "XAML" });
+				scriptGroup.Add(new TechnicalSkills { Name = "JavaScript" });
+				scriptGroup.Add(new TechnicalSkills { Name = "HTML 5.0" });
+				scriptGroup.Add(new TechnicalSkills { Name = "CSS 3.0" });
+				scriptGroup.Add(new TechnicalSkills { Name = "ASP" });
+
+				GroupedDisplay webGroup = new GroupedDisplay { GroupName = "Web Technology" };
+				webGroup.Add(new TechnicalSkills { Name = "ASP.Net MVC" });
+				webGroup.Add(new TechnicalSkills { Name = "angularJS" });
+				webGroup.Add(new TechnicalSkills { Name = "ASP.Net Web API" });
+				webGroup.Add(new TechnicalSkills { Name = "jQuery" });
+				webGroup.Add(new TechnicalSkills { Name = "Knockout.js" });
+
+				GroupedDisplay windowsGroup = new GroupedDisplay { GroupName = "Windows Technology" };
+				windowsGroup.Add(new TechnicalSkills { Name = "WinForms" });
+				windowsGroup.Add(new TechnicalSkills { Name = "WPF" });
+				windowsGroup.Add(new TechnicalSkills { Name = "Win 8.1 Apps" });
+				windowsGroup.Add(new TechnicalSkills { Name = "UWP" });
+
+				GroupedDisplay mobileGroup = new GroupedDisplay { GroupName = "Mobile Technology" };
+				mobileGroup.Add(new TechnicalSkills { Name = "iOS" });
+				mobileGroup.Add(new TechnicalSkills { Name = "Android" });
+				mobileGroup.Add(new TechnicalSkills { Name = "WP 8" });
+				mobileGroup.Add(new TechnicalSkills { Name = "UWP" });
+				mobileGroup.Add(new TechnicalSkills { Name = "Windows CE 6.5" });
+
+				GroupedDisplay sourceControlGroup = new GroupedDisplay { GroupName = "Source Control" };
+				sourceControlGroup.Add(new TechnicalSkills { Name = "TFS" });
+				sourceControlGroup.Add(new TechnicalSkills { Name = "Git" });
+
+				GroupedDisplay frameworkGroup = new GroupedDisplay { GroupName = "Framework" };
+				frameworkGroup.Add(new TechnicalSkills { Name = ".Net 4.5.1" });
+				frameworkGroup.Add(new TechnicalSkills { Name = "MonoTouch" });
+				frameworkGroup.Add(new TechnicalSkills { Name = "MonoDroid" });
+				frameworkGroup.Add(new TechnicalSkills { Name = ".Net CF 3.5" });
+
+				GroupedDisplay devToolsGroup = new GroupedDisplay { GroupName = "Development Tools" };
+				devToolsGroup.Add(new TechnicalSkills { Name = "Visual Studio" });
+				devToolsGroup.Add(new TechnicalSkills { Name = "Xamarin Studio" });
+
+				GroupedDisplay designToolsGroup = new GroupedDisplay { GroupName = " UX Tools" };
+				designToolsGroup.Add(new TechnicalSkills { Name = "Sketch" });
+				designToolsGroup.Add(new TechnicalSkills { Name = "InvisionApp" });
+				designToolsGroup.Add(new TechnicalSkills { Name = "Zepplin" });
+				designToolsGroup.Add(new TechnicalSkills { Name = "Balsamiq" });
+
+				GroupedDisplay cloudGroup = new GroupedDisplay { GroupName = "Cloud Solutions" };
+				cloudGroup.Add(new TechnicalSkills { Name = "Microsoft Azure" });
+
+				GroupedDisplay testingGroup = new GroupedDisplay { GroupName = "Testing Frameworks & Tools" };
+				testingGroup.Add(new TechnicalSkills { Name = "Xamarin Test Cloud" });
+				testingGroup.Add(new TechnicalSkills { Name = "Xamarin Test Recorder" });
+				testingGroup.Add(new TechnicalSkills { Name = "NUnit Unit Testing" });
+				testingGroup.Add(new TechnicalSkills { Name = "MS Unit Testing" });
+				testingGroup.Add(new TechnicalSkills { Name = "SpecFlow API Testing" });
+
+				GroupedDisplay devMethodGroup = new GroupedDisplay { GroupName = "Development Methodology" };
+				devMethodGroup.Add(new TechnicalSkills { Name = "Visual Studio" });
+				devMethodGroup.Add(new TechnicalSkills { Name = "Xamarin Studio" });
+				devMethodGroup.Add(new TechnicalSkills { Name = "XCode" });
+
+				List<GroupedDisplay> techGroupsList = new List<GroupedDisplay>();
+				techGroupsList.Add(programGroup);
+				techGroupsList.Add(scriptGroup);
+				techGroupsList.Add(webGroup);
+				techGroupsList.Add(windowsGroup);
+				techGroupsList.Add(mobileGroup);
+				techGroupsList.Add(sourceControlGroup);
+				techGroupsList.Add(frameworkGroup);
+				techGroupsList.Add(devToolsGroup);
+				techGroupsList.Add(designToolsGroup);
+				techGroupsList.Add(cloudGroup);
+				techGroupsList.Add(testingGroup);
+				techGroupsList.Add(devMethodGroup);
+
+				return techGroupsList;
+			});
+		}
 
 		public async Task<List<WorkExperience>> GetWorkExperiences()
 		{

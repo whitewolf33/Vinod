@@ -13,4 +13,6 @@ namespace Resume
 
 		public string Institute { get { return String.Format("{0}.png", University); } }
 	}
+
+
 }
