@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Prism.Navigation;
+using Prism.Services;
 
 namespace Resume
 {
@@ -21,7 +22,22 @@ namespace Resume
 			}
 		}
 
-		public MenuPageViewModel(INavigationService navigationService) : base(navigationService)
+		Location _myLocation = new Location { Name = "Melbourne, Australia", Latitude = -37.822671d, Longitude = 144.9456918d };
+
+		public Location MyLocation
+		{
+			get
+			{
+				return _myLocation;
+			}
+
+			set
+			{
+				SetProperty(ref _myLocation, value);
+			}
+		}
+
+		public MenuPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService, pageDialogService)
 		{
 			var masterPageItems = new List<MenuItem>();
 			masterPageItems.Add(new MenuItem
@@ -68,6 +84,7 @@ namespace Resume
 			});
 
 			MenuItems = masterPageItems;
+
 		}
 	}
 }

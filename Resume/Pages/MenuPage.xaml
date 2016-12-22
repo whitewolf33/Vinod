@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.MenuPage" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="true" Icon="menu.png" Title="Vinod Srinivasan">
 	<ContentPage.Content>
-		<StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#2A2929" Spacing="20" Padding="0">
+		<StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#2A2929" Spacing="10" Padding="0">
 			<StackLayout BackgroundColor="{StaticResource NavBarBackgroundColor}" Padding="0,20" Spacing="0">
 				<Label Grid.Row="0" Grid.Column="1" Style="{StaticResource Label_Header}" TextColor="{StaticResource AppSecondaryColor}" Text="Vinod Srinivasan" HorizontalTextAlignment="Center" VerticalTextAlignment="End" HeightRequest="24" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
 			</StackLayout>
@@ -17,8 +17,21 @@
 				</Grid.ColumnDefinitions>
 				<Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Style="{StaticResource Image_Profile}" HeightRequest="80" WidthRequest="80" />
 				<Label Grid.Row="0" Grid.Column="1" Style="{StaticResource Label_Default}" Text="Xamarin Development Consultant" />
-				<Label Grid.Row="1" Grid.Column="1" Style="{StaticResource Label_Default}" Text="+61 433 286 080" />
-				<Label Grid.Row="2" Grid.Column="1" Style="{StaticResource Label_Default}" Text="Melbourne, Australia" />
+				<StackLayout Grid.Row="1" Grid.Column="1" Padding="0" Spacing="0" HorizontalOptions="Start">
+					<StackLayout Orientation="Horizontal" Padding="0" Spacing="5">
+						<Image Source="call.png" WidthRequest="15" />
+						<Button Style="{StaticResource Button_Link}" Text="+61 433 286 080" HeightRequest="14" Command="{Binding CallCommand}" CommandParameter="+61 433 286 080" />
+					</StackLayout>
+					<BoxView Style="{StaticResource BoxView_Link}" Margin="20,0,0,0" />
+				</StackLayout>
+				<StackLayout Grid.Row="2" Grid.Column="1" Padding="0" Spacing="0" HorizontalOptions="Start" >
+					<StackLayout Orientation="Horizontal" Padding="0" Spacing="5">
+						<Image Source="pin.png" WidthRequest="15" />
+						<Button Style="{StaticResource Button_Link}" Text="{Binding MyLocation.Name}" HeightRequest="14" Command="{Binding DirectionTappedCommand}" CommandParameter="{Binding MyLocation}" />
+					</StackLayout>
+					<BoxView Style="{StaticResource BoxView_Link}" Margin="20,0,0,0" />
+				</StackLayout>
+				<Label Grid.Row="2" Grid.Column="1" Style="{StaticResource Label_Default}" Text="" />
 			</Grid>
 			<StackLayout Grid.Row="0" Grid.Column="1" Spacing="20" Padding="20,0" Orientation="Horizontal">
 				<Button Style="{StaticResource Button_Email}" Command="{Binding OpenSocialCommand}" CommandParameter="Email" />
@@ -28,12 +41,12 @@
 				<Button Style="{StaticResource Button_GitHub}" Command="{Binding OpenSocialCommand}" CommandParameter="GitHub" />
 			</StackLayout>
 			<!--<BoxView Style="{StaticResource BoxView_Dividor}" />-->
-			<ListView x:Name="listView" HorizontalOptions="FillAndExpand" SeparatorVisibility="None" ItemsSource="{Binding MenuItems}" BackgroundColor="Transparent">
+			<ListView x:Name="listView" HorizontalOptions="FillAndExpand" SeparatorVisibility="None" HasUnevenRows="true" ItemsSource="{Binding MenuItems}" BackgroundColor="Transparent">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
 							<StackLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-								<StackLayout Padding="10" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+								<StackLayout Padding="10,5" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 									<Image Source="{Binding Icon}" HeightRequest="30" WidthRequest="30" />
 									<Label Text="{Binding Title}" Style="{StaticResource Label_Default}" VerticalTextAlignment="Center" />
 								</StackLayout>

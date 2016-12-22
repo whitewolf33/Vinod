@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Plugin.Share;
 using Plugin.Share.Abstractions;
 using System;
+using Prism.Services;
 
 namespace Resume
 {
@@ -16,9 +17,52 @@ namespace Resume
 
 		public DelegateCommand<string> OpenSocialCommand { get; private set; }
 
+		public DelegateCommand<string> CallCommand { get; private set; }
+
+		public DelegateCommand<Location> DirectionTappedCommand { get; private set;}
+
+		protected IPageDialogService PageDialogService { get; private set; }
+
+		protected BaseViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : this  (navigationService)
+		{
+			PageDialogService = pageDialogService;
+		}
+
 		protected BaseViewModel(INavigationService navigationService)
 		{
 			NavigationService = navigationService;
+
+			DirectionTappedCommand = new DelegateCommand<Location>((location) =>
+			{
+				var name = location.Name.Replace("&", "and"); // var name = Uri.EscapeUriString(place.Name);
+				var loc = string.Format("{0},{1}", location.Latitude, location.Longitude);
+				var request = Device.OnPlatform(
+				  // iOS doesn't like %s or spaces in their URLs, so manually replace spaces with +s
+				  string.Format("http://maps.apple.com/maps?q={0}&sll={1}", name.Replace(' ', '+'), loc),
+				  string.Format("geo:0,0?q={0}({1})", loc, name),
+				  // WinPhone
+				  string.Format("bingmaps:?cp={0}&q={1}", loc, name)
+				);
+
+				Device.OpenUri(new Uri(request));
+
+			});
+
+			CallCommand = new DelegateCommand<string>(async (arg) =>
+			{
+				if (string.IsNullOrWhiteSpace(arg))
+					return;
+				if (PageDialogService != null)
+				{
+					var confirm = await PageDialogService.DisplayAlertAsync("Confirm", String.Format("Call {0}?",arg.Trim()), "OK", "Cancel");
+					if (confirm)
+						Device.OpenUri(new Uri("tel:" + arg.Trim().Replace(" ","")));
+				}
+				else
+				{
+					throw new Exception("Call the constructor with dependency injection");
+				}
+			});
 
 			OpenWebsiteCommand = new DelegateCommand<string>((arg) =>
 			{

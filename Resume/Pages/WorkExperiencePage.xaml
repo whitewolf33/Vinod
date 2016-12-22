@@ -28,7 +28,7 @@
 								<Label Style="{StaticResource Label_Header}" Text="{Binding Company}" />
 								<Label Style="{StaticResource Label_Default}" Text="{Binding Address}" HeightRequest="40" />
 							</StackLayout>
-							<local:CompanyMap Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="MyMap" IsShowingUser="false" MapType="Street" Margin="-10,0" CompanyLocation="{Binding CompanyLocation}" />
+							<local:CompanyMap Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="MyMap" IsShowingUser="false" IsEnabled="false" MapType="Street" Margin="-10,0" CompanyLocation="{Binding CompanyLocation}" />
 							<StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="-10,0" Padding="0" VerticalOptions="FillAndExpand">
 								<StackLayout Padding="10,0">
 									<Label Style="{StaticResource Label_Header}" Text="PROJECTS" HeightRequest="30" />
