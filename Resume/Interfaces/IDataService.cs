@@ -10,5 +10,7 @@ namespace Resume
 		Task<List<WorkExperience>> GetWorkExperiences();
 
 		Task<List<GroupedDisplay>> GetTechnicalSkills();
+
+		Task<List<Project>> GetProjectsList();
 	}
 }
