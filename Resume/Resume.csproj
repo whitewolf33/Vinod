@@ -56,6 +56,9 @@
     <EmbeddedResource Include="Pages\TechnicalSkillsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ProjectsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -112,6 +115,10 @@
     </Compile>
     <Compile Include="ViewModels\TechnicalSkillsPageViewModel.cs" />
     <Compile Include="Models\TechnicalSkills.cs" />
+    <Compile Include="Pages\ProjectsPage.xaml.cs">
+      <DependentUpon>ProjectsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ProjectsPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Resume
 {
 	public class Project
@@ -10,7 +12,12 @@ namespace Resume
 
 		public string Description { get; set; }
 
-		public string Technology { get; set; }
+		public string Technology
+		{
+			get { return string.Join(", ", Technologies); }
+		}
+
+		public List<TechnicalSkills> Technologies { get; set; }
 
 		public string Responsibility { get; set; }
 

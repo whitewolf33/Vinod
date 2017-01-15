@@ -30,9 +30,10 @@ namespace Resume
 		TechnicalSkills winCE = new TechnicalSkills { Name = "Windows CE 6.5" };
 		TechnicalSkills tfs = new TechnicalSkills { Name = "TFS" };
 		TechnicalSkills git = new TechnicalSkills { Name = "Git" };
-		TechnicalSkills dotNet = new TechnicalSkills { Name = ".Net 4.5.1" };
-		TechnicalSkills mono = new TechnicalSkills { Name = "Mono" };
-		TechnicalSkills monoDroid = new TechnicalSkills { Name = "MonoDroid" };
+		TechnicalSkills dotNetCore = new TechnicalSkills { Name = ".Net Core" };
+		TechnicalSkills mono = new TechnicalSkills { Name = "Xamarin.iOS" };
+		TechnicalSkills monoDroid = new TechnicalSkills { Name = "Xamarin.Droid" };
+		TechnicalSkills xamForms = new TechnicalSkills { Name = "Xamarin Forms" };
 		TechnicalSkills vs = new TechnicalSkills { Name = "Visual Studio" };
 		TechnicalSkills xs = new TechnicalSkills { Name = "Xamarin Studio" };
 		TechnicalSkills xcode = new TechnicalSkills { Name = "XCode" };
@@ -40,7 +41,7 @@ namespace Resume
 		TechnicalSkills invision = new TechnicalSkills { Name = "InvisionApp" };
 		TechnicalSkills zepplin = new TechnicalSkills { Name = "Zepplin" };
 		TechnicalSkills balsamiq = new TechnicalSkills { Name = "Balsamiq" };
-		TechnicalSkills azure = new TechnicalSkills { Name = "Microsoft Azure" };
+		TechnicalSkills azure = new TechnicalSkills { Name = "Microsoft Azure - PaaS, SaaS, IaaS" };
 		TechnicalSkills testCloud = new TechnicalSkills { Name = "Xamarin Test Cloud" };
 		TechnicalSkills xamTestRec = new TechnicalSkills { Name = "Xamarin Test Recorder" };
 		TechnicalSkills nUnit = new TechnicalSkills { Name = "NUnit Unit Testing" };
@@ -51,6 +52,49 @@ namespace Resume
 		TechnicalSkills kanban = new TechnicalSkills { Name = "Agile - Kanban" };
 		TechnicalSkills sql = new TechnicalSkills { Name = "SQL Server" };
 		TechnicalSkills sqlite = new TechnicalSkills { Name = "SQLite" };
+
+		public static List<Project> Projects { get; set; } = new List<Project>();
+
+		public DataService()
+		{
+			Project cpc = new Project();
+			cpc.Name = "Care Plan Connect";
+			cpc.Logo = "cpc.png";
+			cpc.Duration = "Dec 2015 - June 2016";
+
+			cpc.ShortDescription = "iOS and Android App";
+			cpc.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			//cpc.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
+			cpc.Technologies = new List<TechnicalSkills>
+					{
+						xamForms,webApi, azure, sql, sqlite
+					};
+			cpc.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			Projects.Add(cpc);
+
+			Project cc = new Project();
+			cc.Name = "Consumer Channel";
+			cc.Logo = "consumerchannel.png";
+			cc.Duration = "July 2016 - September 2016";
+
+			cc.ShortDescription = "iOS and Android App";
+			cc.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			//cc.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
+			cc.Technologies = new List<TechnicalSkills> { xamForms, webApi, azure, sql };
+			cc.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			Projects.Add(cc);
+
+			Project hg = new Project();
+			hg.Name = "HealthGateway";
+			hg.Logo = "healthgateway.png";
+			hg.Duration = "September 2016 - Till date";
+			hg.ShortDescription = "iOS and Android App";
+			hg.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
+			hg.Technologies = new List<TechnicalSkills> { xamForms, webApi, azure, sql };
+			hg.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			Projects.Add(hg);
+		}
 
 		public async Task<List<GroupedDisplay>> GetQualifications()
 		{
@@ -130,11 +174,11 @@ namespace Resume
 				sourceControlGroup.Add(tfs);
 				sourceControlGroup.Add(git);
 
-				GroupedDisplay frameworkGroup = new GroupedDisplay { GroupName = "Framework" };
-				frameworkGroup.Add(dotNet);
+				GroupedDisplay frameworkGroup = new GroupedDisplay { GroupName = "Cross Platform" };
+				frameworkGroup.Add(dotNetCore);
 				frameworkGroup.Add(mono);
 				frameworkGroup.Add(monoDroid);
-				frameworkGroup.Add(winCE);
+				frameworkGroup.Add(xamForms);
 
 				GroupedDisplay devToolsGroup = new GroupedDisplay { GroupName = "Development Tools" };
 				devToolsGroup.Add(vs);
@@ -198,41 +242,8 @@ namespace Resume
 						Longitude = 144.9635376,
 						CompanyLogo = "thealth.png"
 					};
-					List<Project> projects = new List<Project>();
 
-					Project cpc = new Project();
-					cpc.Name = "Care Plan Connect";
-					cpc.Logo = "cpc.png";
-					cpc.Duration = "Dec 2015 - June 2016";
-
-					cpc.ShortDescription = "iOS and Android App";
-					cpc.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
-					cpc.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
-					cpc.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
-					projects.Add(cpc);
-
-					Project cc = new Project();
-					cc.Name = "Consumer Channel";
-					cc.Logo = "consumerchannel.png";
-					cc.Duration = "July 2016 - September 2016";
-
-					cc.ShortDescription = "iOS and Android App";
-					cc.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
-					cc.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
-					cc.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
-					projects.Add(cc);
-
-					Project hg = new Project();
-					hg.Name = "HealthGateway";
-					hg.Logo = "healthgateway.png";
-					hg.Duration = "September 2016 - Till date";
-					hg.ShortDescription = "iOS and Android App";
-					hg.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
-					hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
-					hg.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
-					projects.Add(hg);
-
-					telstra.Projects = projects;
+					telstra.Projects = Projects;
 
 					workExperiences.Add(telstra);
 
@@ -247,7 +258,7 @@ namespace Resume
 						CompanyLogo = "city.png"
 					};
 
-					city.Projects = projects;
+					city.Projects = Projects;
 					workExperiences.Add(city);
 
 					var fred = new WorkExperience
@@ -294,7 +305,20 @@ namespace Resume
 
 		public async Task<List<Project>> GetProjectsList()
 		{
-			return new List<Project>();
+			return await Task.Run(() =>
+			{
+				try
+				{
+
+					GroupedDisplay graduationGroup = new GroupedDisplay { GroupName = "Graduation" };
+					return workExperiences;
+				}
+				catch (Exception ex)
+				{
+					MyInsights.Report(ex);
+					return new List<WorkExperience>();
+				}
+			});
 		}
 	}
 }

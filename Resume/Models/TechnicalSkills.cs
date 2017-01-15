@@ -11,5 +11,10 @@ namespace Resume
 		public int Strength { get; set; }
 
 		public int Years { get; set; }
+
+		public override string ToString()
+		{
+			return Name;
+		}
 	}
 }
