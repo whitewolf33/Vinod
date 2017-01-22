@@ -62,7 +62,7 @@ namespace Resume
 			{
 				Title = "Projects",
 				Icon = "projects.png",
-				Target = typeof(ProjectDetailPage)
+				Target = typeof(ProjectsPage)
 			});
 			masterPageItems.Add(new MenuItem
 			{

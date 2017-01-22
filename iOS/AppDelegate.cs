@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Common;
 using Foundation;
 using UIKit;
 
@@ -18,10 +18,27 @@ namespace Resume.iOS
 #if ENABLE_TEST_CLOUD
 			Xamarin.Calabash.Start();
 #endif
-
+			var buildVersion = GetAppBuildVersion();
 			LoadApplication(new App());
+			AppConfig.APP_VERSION = buildVersion;
+			AppConfig.SCREEN_WIDTH = (int)UIScreen.MainScreen.Bounds.Width;
+			AppConfig.SCREEN_HEIGHT = (int)UIScreen.MainScreen.Bounds.Height;
 			Xamarin.FormsMaps.Init();
 			return base.FinishedLaunching(app, options);
+		}
+
+
+		private string GetAppBuildVersion()
+		{
+			try
+			{
+				return NSBundle.MainBundle.InfoDictionary[new NSString("CFBundleVersion")].ToString();
+			}
+			catch (Exception ex)
+			{
+				MyInsights.Report(ex);
+				return string.Empty;
+			}
 		}
 	}
 }

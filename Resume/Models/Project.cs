@@ -17,6 +17,8 @@ namespace Resume
 			get { return string.Join(", ", Technologies); }
 		}
 
+		public WorkExperience Company { get; set; }
+
 		public List<TechnicalSkills> Technologies { get; set; }
 
 		public string Responsibility { get; set; }

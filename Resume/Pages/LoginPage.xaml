@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.LoginPage" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="true" Title="Vinod Srinivasan" BackgroundImage="background.png" xmlns:common="clr-namespace:Common;assembly=Common">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.LoginPage" 
+		xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="true" Title="Vinod Srinivasan" 
+		BackgroundImage="background.png" xmlns:common="clr-namespace:Common;assembly=Common">
 	<ContentPage.Content>
 		<ScrollView Padding="0">
 			<Grid Padding="20" RowSpacing="10">

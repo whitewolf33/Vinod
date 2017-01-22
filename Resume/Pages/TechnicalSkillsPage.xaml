@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.TechnicalSkillsPage" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="true" BackgroundImage="background.png" xmlns:common="clr-namespace:Common;assembly=Common" xmlns:local="clr-namespace:Resume;assembly=Resume" Title="Technical Skills">
 	<ContentPage.Content>
 		<StackLayout Padding="20,10">
-			<local:ListViewEx StyleId="listViewSkills" x:Name="listViewSkills" RowHeight="{Binding ListViewRowHeight}" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding GroupedDisplayCollection}" IsGroupingEnabled="true" GroupDisplayBinding="{Binding GroupName}" HasUnevenRows="true" HeightRequest="{Binding ListViewHeight}"
+			<local:ListViewEx StyleId="listViewSkills" RowHeight="{Binding ListViewRowHeight}" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding GroupedDisplayCollection}" IsGroupingEnabled="true" GroupDisplayBinding="{Binding GroupName}" HasUnevenRows="true" HeightRequest="{Binding ListViewHeight}"
 				SeparatorVisibility="None" HorizontalOptions="FillAndExpand" SelectedItem="{Binding SelectedMenuItem}" BackgroundColor="Transparent">
 				<ListView.GroupHeaderTemplate>
 					<DataTemplate>

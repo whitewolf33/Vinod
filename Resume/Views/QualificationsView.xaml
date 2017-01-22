@@ -2,7 +2,7 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.QualificationsView" xmlns:common="clr-namespace:Common;assembly=Common" BackgroundColor="Transparent">
 	<ContentView.Content>
 		<StackLayout Padding="20,10">
-			<ListView StyleId="listViewMenu" x:Name="listViewMenu" RowHeight="{Binding ListViewRowHeight}" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding GroupedDisplayCollection}" IsGroupingEnabled="true" GroupDisplayBinding="{Binding GroupName}" HasUnevenRows="true" HeightRequest="{Binding ListViewHeight}"
+			<ListView StyleId="listViewMenu" RowHeight="{Binding ListViewRowHeight}" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding GroupedDisplayCollection}" IsGroupingEnabled="true" GroupDisplayBinding="{Binding GroupName}" HasUnevenRows="true" HeightRequest="{Binding ListViewHeight}"
 				SeparatorVisibility="None" HorizontalOptions="FillAndExpand" SelectedItem="{Binding SelectedMenuItem}" BackgroundColor="Transparent">
 				<ListView.GroupHeaderTemplate>
 					<DataTemplate>

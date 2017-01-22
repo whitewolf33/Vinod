@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Common;
 
@@ -8,6 +9,7 @@ namespace Resume
 	public class DataService : BaseService, IDataService
 	{
 
+		#region Technical Skills
 		TechnicalSkills cSharp = new TechnicalSkills { Name = "C#" };
 		TechnicalSkills objC = new TechnicalSkills { Name = "Objective C" };
 		TechnicalSkills xaml = new TechnicalSkills { Name = "XAML" };
@@ -52,11 +54,67 @@ namespace Resume
 		TechnicalSkills kanban = new TechnicalSkills { Name = "Agile - Kanban" };
 		TechnicalSkills sql = new TechnicalSkills { Name = "SQL Server" };
 		TechnicalSkills sqlite = new TechnicalSkills { Name = "SQLite" };
+		#endregion
+
+
+		#region Work
+
+		WorkExperience _telstra;
+
+		WorkExperience _city;
+
+		WorkExperience _fred;
+
+		WorkExperience _cadability;
+
+		#endregion
 
 		public static List<Project> Projects { get; set; } = new List<Project>();
 
 		public DataService()
 		{
+
+			_telstra = new WorkExperience
+			{
+				Index = 1,
+				Company = "Telstra Health",
+				Address = " Level 3, 222, QV Building, Melbourne, VIC - 3000",
+				WorkPeriod = "Dec 2015 - CURRENT",
+				Latitude = -37.8106622,
+				Longitude = 144.9635376,
+				CompanyLogo = "thealth.png"
+			};
+			_city = new WorkExperience
+			{
+				Index = 2,
+				Company = "City Holdings Aus Pty Ltd",
+				Address = " Level 3, 222, QV Building, Melbourne, VIC - 3000",
+				WorkPeriod = "Jun 2015 - Dec 2015",
+				Latitude = -37.9194124,
+				Longitude = 145.1577831,
+				CompanyLogo = "city.png"
+			};
+			_fred = new WorkExperience
+			{
+				Index = 3,
+				Company = "FRED IT Group",
+				Address = " Level 3, 222, QV Building, Melbourne, VIC - 3000",
+				WorkPeriod = "Jan 2008 - Jun 2015",
+				Latitude = -37.7993071,
+				Longitude = 144.9976491,
+				CompanyLogo = "fred.png"
+			};
+			_cadability = new WorkExperience
+			{
+				Index = 4,
+				Company = "Cadability Pty Ltd",
+				Address = " Level 3, 222, QV Building, Melbourne, VIC - 3000",
+				WorkPeriod = "Jan 2008 - Jun 2015",
+				Latitude = -37.7993071,
+				Longitude = 144.9976491,
+				CompanyLogo = "fred.png"
+			};
+
 			Project cpc = new Project();
 			cpc.Name = "Care Plan Connect";
 			cpc.Logo = "cpc.png";
@@ -70,7 +128,8 @@ namespace Resume
 						xamForms,webApi, azure, sql, sqlite
 					};
 			cpc.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
-			Projects.Add(cpc);
+			cpc.Company = _telstra;
+			_telstra.Projects.Add(cpc);
 
 			Project cc = new Project();
 			cc.Name = "Consumer Channel";
@@ -82,7 +141,8 @@ namespace Resume
 			//cc.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
 			cc.Technologies = new List<TechnicalSkills> { xamForms, webApi, azure, sql };
 			cc.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
-			Projects.Add(cc);
+			cc.Company = _telstra;
+			_telstra.Projects.Add(cc);
 
 			Project hg = new Project();
 			hg.Name = "HealthGateway";
@@ -93,7 +153,108 @@ namespace Resume
 			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
 			hg.Technologies = new List<TechnicalSkills> { xamForms, webApi, azure, sql };
 			hg.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
-			Projects.Add(hg);
+			hg.Company = _telstra;
+			_telstra.Projects.Add(hg);
+
+			Project myAssets = new Project();
+			myAssets.Name = "MyAssets";
+			myAssets.Logo = "healthgateway.png";
+			myAssets.Duration = "September 2016 - Till date";
+			myAssets.ShortDescription = "iOS and Android App";
+			myAssets.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
+			myAssets.Technologies = new List<TechnicalSkills> { xamForms, webApi, azure, sql };
+			myAssets.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			myAssets.Company = _city;
+			_city.Projects.Add(myAssets);
+
+			Project myFM = new Project();
+			myFM.Name = "MyFM";
+			myFM.Logo = "healthgateway.png";
+			myFM.Duration = "September 2016 - Till date";
+			myFM.ShortDescription = "iOS and Android App";
+			myFM.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
+			myFM.Technologies = new List<TechnicalSkills> { xamForms, webApi, azure, sql };
+			myFM.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			myFM.Company = _city;
+			_city.Projects.Add(myFM);
+
+
+			Project myAvailability = new Project();
+			myAvailability.Name = "MyAvailability";
+			myAvailability.Logo = "healthgateway.png";
+			myAvailability.Duration = "September 2016 - Till date";
+			myAvailability.ShortDescription = "iOS and Android App";
+			myAvailability.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
+			myAvailability.Technologies = new List<TechnicalSkills> { xamForms, webApi, azure, sql };
+			myAvailability.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			myAvailability.Company = _city;
+			_city.Projects.Add(myAvailability);
+
+			Project fredNxtOffice = new Project();
+			fredNxtOffice.Name = "Fred Nxt Office";
+			fredNxtOffice.Logo = "healthgateway.png";
+			fredNxtOffice.Duration = "September 2016 - Till date";
+			fredNxtOffice.ShortDescription = "iOS and Android App";
+			fredNxtOffice.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
+			fredNxtOffice.Technologies = new List<TechnicalSkills> { xamForms, webApi, azure, sql };
+			fredNxtOffice.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			fredNxtOffice.Company = _fred;
+			_fred.Projects.Add(fredNxtOffice);
+
+
+			Project fredOffice = new Project();
+			fredOffice.Name = "Fred Office";
+			fredOffice.Logo = "healthgateway.png";
+			fredOffice.Duration = "September 2016 - Till date";
+			fredOffice.ShortDescription = "iOS and Android App";
+			fredOffice.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
+			fredOffice.Technologies = new List<TechnicalSkills> { xamForms, webApi, azure, sql };
+			fredOffice.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			fredOffice.Company = _fred;
+			_fred.Projects.Add(fredOffice);
+
+			Project fredRapid = new Project();
+			fredRapid.Name = "Fred Rapid";
+			fredRapid.Logo = "healthgateway.png";
+			fredRapid.Duration = "September 2016 - Till date";
+			fredRapid.ShortDescription = "iOS and Android App";
+			fredRapid.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
+			fredRapid.Technologies = new List<TechnicalSkills> { xamForms, webApi, azure, sql };
+			fredRapid.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			fredRapid.Company = _fred;
+			_fred.Projects.Add(fredRapid);
+
+			Project scoringSystem = new Project();
+			scoringSystem.Name = "Data Capture Systems";
+			scoringSystem.Logo = "healthgateway.png";
+			scoringSystem.Duration = "September 2016 - Till date";
+			scoringSystem.ShortDescription = "iOS and Android App";
+			scoringSystem.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
+			scoringSystem.Technologies = new List<TechnicalSkills> { xamForms, webApi, azure, sql };
+			scoringSystem.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			scoringSystem.Company = _cadability;
+			_cadability.Projects.Add(scoringSystem);
+
+			Project delivery = new Project();
+			delivery.Name = "Data Delivery Systems";
+			delivery.Logo = "healthgateway.png";
+			delivery.Duration = "September 2016 - Till date";
+			delivery.ShortDescription = "iOS and Android App";
+			delivery.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
+			delivery.Technologies = new List<TechnicalSkills> { xamForms, webApi, azure, sql };
+			delivery.Responsibility = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
+			delivery.Company = _cadability;
+			_cadability.Projects.Add(delivery);
+
+			Projects = _telstra.Projects.Union(_city.Projects).Union(_fred.Projects).Union(_cadability.Projects).ToList();
 		}
 
 		public async Task<List<GroupedDisplay>> GetQualifications()
@@ -232,66 +393,10 @@ namespace Resume
 				try
 				{
 					List<WorkExperience> workExperiences = new List<WorkExperience>();
-					var telstra = new WorkExperience
-					{
-						Index = 1,
-						Company = "Telstra Health",
-						Address = " Level 3, 222, QV Building, Melbourne, VIC - 3000",
-						WorkPeriod = "Dec 2015 - CURRENT",
-						Latitude = -37.8106622,
-						Longitude = 144.9635376,
-						CompanyLogo = "thealth.png"
-					};
-
-					telstra.Projects = Projects;
-
-					workExperiences.Add(telstra);
-
-					var city = new WorkExperience
-					{
-						Index = 2,
-						Company = "City Holdings Aus Pty Ltd",
-						Address = " Level 3, 222, QV Building, Melbourne, VIC - 3000",
-						WorkPeriod = "Jun 2015 - Dec 2015",
-						Latitude = -37.9194124,
-						Longitude = 145.1577831,
-						CompanyLogo = "city.png"
-					};
-
-					city.Projects = Projects;
-					workExperiences.Add(city);
-
-					var fred = new WorkExperience
-					{
-						Index = 3,
-						Company = "FRED IT Group",
-						Address = " Level 3, 222, QV Building, Melbourne, VIC - 3000",
-						WorkPeriod = "Jan 2008 - Jun 2015",
-						Latitude = -37.7993071,
-						Longitude = 144.9976491,
-						CompanyLogo = "fred.png"
-					};
-
-					List<Project> fredProjects = new List<Project>();
-					fred.Projects = fredProjects;
-
-					workExperiences.Add(fred);
-
-					var cadability = new WorkExperience
-					{
-						Index = 4,
-						Company = "Cadability Pty Ltd",
-						Address = " Level 3, 222, QV Building, Melbourne, VIC - 3000",
-						WorkPeriod = "Jan 2008 - Jun 2015",
-						Latitude = -37.7993071,
-						Longitude = 144.9976491,
-						CompanyLogo = "fred.png"
-					};
-
-					List<Project> cadProjects = new List<Project>();
-					cadability.Projects = cadProjects;
-
-					workExperiences.Add(cadability);
+					workExperiences.Add(_telstra);
+					workExperiences.Add(_city);
+					workExperiences.Add(_fred);
+					workExperiences.Add(_cadability);
 
 					return workExperiences;
 				}
@@ -309,14 +414,12 @@ namespace Resume
 			{
 				try
 				{
-
-					GroupedDisplay graduationGroup = new GroupedDisplay { GroupName = "Graduation" };
-					return workExperiences;
+					return Projects;
 				}
 				catch (Exception ex)
 				{
 					MyInsights.Report(ex);
-					return new List<WorkExperience>();
+					return new List<Project>();
 				}
 			});
 		}

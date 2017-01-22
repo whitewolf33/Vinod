@@ -8,52 +8,12 @@ namespace Resume
 {
 	public class ProjectsPageViewModel : BaseViewModel
 	{
-
-		List<GroupedDisplay> _groupedDisplayCollection;
-
-		public List<GroupedDisplay> GroupedDisplayCollection
+		List<Project> _projectsList;
+		public List<Project> ProjectsList
 		{
-			get
-			{
-				return _groupedDisplayCollection;
-			}
-
-			set
-			{
-				_groupedDisplayCollection = value;
-
-				OnPropertyChanged("GroupedDisplayCollection");
-			}
-		}
-
-		double listViewRowHeight = 44;
-		public double ListViewRowHeight
-		{
-			get
-			{
-				return listViewRowHeight;
-			}
-
-			set
-			{
-				listViewRowHeight = value;
-			}
-		}
-
-		double listViewHeight;
-
-		public double ListViewHeight
-		{
-			get
-			{
-				return listViewHeight;
-			}
-
-			set
-			{
-				listViewHeight = value;
-			}
-		}
+			get { return _projectsList; }
+			set { SetProperty(ref _projectsList,  value); }
+		}	
 
 		public ProjectsPageViewModel(INavigationService navigationService) : base(navigationService)
 		{
@@ -61,7 +21,7 @@ namespace Resume
 			{
 				var dataService = ((App)Application.Current).Container.Resolve<IDataService>();
 				if (dataService != null)
-					GroupedDisplayCollection = await dataService.GetTechnicalSkills();
+					ProjectsList = await dataService.GetProjectsList();
 			});
 		}
 	}

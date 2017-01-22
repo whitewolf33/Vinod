@@ -1,30 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.ProjectsPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.ProjectsPage" 
+		xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="true" Title="Projects" 
+		xmlns:local="clr-namespace:Resume;assembly=Resume" xmlns:common="clr-namespace:Common;assembly=Common" BackgroundImage="background.png">
 	<ContentPage.Content>
-	<StackLayout Padding="20,10">
-		<local:ListViewEx StyleId="listViewSkills" x:Name="listViewSkills" RowHeight="{Binding ListViewRowHeight}" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding GroupedDisplayCollection}" IsGroupingEnabled="true" GroupDisplayBinding="{Binding GroupName}" HasUnevenRows="true" HeightRequest="{Binding ListViewHeight}"
-				SeparatorVisibility="None" HorizontalOptions="FillAndExpand" SelectedItem="{Binding SelectedMenuItem}" BackgroundColor="Transparent">
-				<ListView.GroupHeaderTemplate>
-					<DataTemplate>
-						<ViewCell Height="30">
-							<Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-								<Label BackgroundColor="{StaticResource AppSecondaryColor}" />
-								<StackLayout Padding="5,0" VerticalOptions="FillAndExpand">
-									<Label Text="{Binding GroupName}" Style="{StaticResource Label_Header}" FontSize="18" BackgroundColor="Transparent" HeightRequest="30" TextColor="White" HorizontalTextAlignment="Start" />
-								</StackLayout>
-							</Grid>
-						</ViewCell>
-					</DataTemplate>
-				</ListView.GroupHeaderTemplate>
-				<ListView.ItemTemplate>
-					<DataTemplate>
-						<ViewCell>
-							<ViewCell.View>
-							</ViewCell.View>
-						</ViewCell>
-					</DataTemplate>
-				</ListView.ItemTemplate>
-			</local:ListViewEx>
+		<StackLayout Padding="20,10"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+			<local:DeckView ItemsSource="{Binding ProjectsList}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+		</StackLayout>
 	</ContentPage.Content>
-	</StackLayout>
 </ContentPage>

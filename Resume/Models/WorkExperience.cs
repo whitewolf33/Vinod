@@ -19,7 +19,7 @@ namespace Resume
 
 		public string CompanyLogo { get; set; }
 
-		public List<Project> Projects { get; set; }
+		public List<Project> Projects { get; set; } = new List<Project>();
 
 		public Location CompanyLocation
 		{
