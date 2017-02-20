@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.DeckView">
 	<ContentView.Content>
-		<RelativeLayout x:Name="deckLayout" Padding="0,20">
+		<RelativeLayout x:Name="deckLayout" Padding="0,20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+			<StackLayout x:Name="stackContainer" Padding="0" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RelativeLayout.XConstraint="0" RelativeLayout.YConstraint="0" />
 		</RelativeLayout>
 	</ContentView.Content>
 </ContentView>

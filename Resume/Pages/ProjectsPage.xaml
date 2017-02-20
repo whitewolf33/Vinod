@@ -3,8 +3,9 @@
 		xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="true" Title="Projects" 
 		xmlns:local="clr-namespace:Resume;assembly=Resume" xmlns:common="clr-namespace:Common;assembly=Common" BackgroundImage="background.png">
 	<ContentPage.Content>
-		<StackLayout Padding="20,10"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+		<StackLayout Padding="0"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 			<local:DeckView ItemsSource="{Binding ProjectsList}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

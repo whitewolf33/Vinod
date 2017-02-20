@@ -28,21 +28,21 @@ namespace Resume
 			Container.RegisterType<MenuPageViewModel>();
 
 			Container.RegisterTypeForNavigation<AboutMePage>();
-			Container.RegisterType<AboutMePageViewModel>();
+			Container.RegisterType<AboutMePageViewModel>(new ContainerControlledLifetimeManager());
 
 			Container.RegisterTypeForNavigation<QualificationsPage>();
-			Container.RegisterType<QualificationsPageViewModel>();
+			Container.RegisterType<QualificationsPageViewModel>(new ContainerControlledLifetimeManager());
 
 			Container.RegisterTypeForNavigation<WorkExperiencePage>();
-			Container.RegisterType<WorkExperiencePageViewModel>();
+			Container.RegisterType<WorkExperiencePageViewModel>(new ContainerControlledLifetimeManager());
 
 			Container.RegisterTypeForNavigation<ProjectDetailPage>();
-			Container.RegisterType<ProjectDetailPageViewModel>();
+			Container.RegisterType<ProjectDetailPageViewModel>(new ContainerControlledLifetimeManager());
 
 			Container.RegisterTypeForNavigation<NavigationPageEx>();
 
 			/**************** Instance Registration ***********/
-			Container.RegisterInstance<IDataService>(new DataService());
+			Container.RegisterType<IDataService, DataService>(new ContainerControlledLifetimeManager());
 
 		}
 
