@@ -117,9 +117,10 @@ namespace Resume
 				//Set the recent as the first card
 				foreach (var proj in projects)
 				{
-					StackLayout newStack = new StackLayout() { HorizontalOptions = LayoutOptions.FillAndExpand, VerticalOptions = LayoutOptions.FillAndExpand, BackgroundColor = Color.FromHex("#161F3D") };
-					Label title = new Label { Text = proj.Name, HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center, TextColor = Color.White };
-					newStack.Children.Add(title);
+					StackLayout newStack = new StackLayout { HorizontalOptions = LayoutOptions.FillAndExpand, VerticalOptions = LayoutOptions.FillAndExpand, Padding=0, Spacing=0 };
+					ProjectView projectView = new ProjectView { BindingContext = new ProjectViewViewModel { Project = proj } };
+					//Label title = new Label { Text = proj.Name, HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center, TextColor = Color.White };
+					newStack.Children.Add(projectView);
 					newStack.GestureRecognizers.Add(_panGesture);
 					if (panelCount == 0)
 					{
