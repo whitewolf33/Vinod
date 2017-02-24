@@ -5,22 +5,32 @@
 			<Grid.RowDefinitions>
 				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
-			<Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#D8D8D8" Opacity="0.30" HasShadow="false" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="10,15,10,10" />
-			<Grid Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,15,10,10">
+			<Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#D8D8D8" Opacity="0.30" HasShadow="true" OutlineColor="#787878" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="10,15,10,10" />
+			<Grid Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,15,10,10" ColumnSpacing="20">
 				<Grid.RowDefinitions>
 					<RowDefinition Height="100" />
-					<RowDefinition Height="150" />
 					<RowDefinition Height="*" />
 				</Grid.RowDefinitions>
 				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="120" />
+					<ColumnDefinition Width="100" />
 					<ColumnDefinition Width="*" />
 				</Grid.ColumnDefinitions>
-				<Image Grid.Row="0" Grid.Column="0" Source="{Binding Project.Logo}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-				<StackLayout Grid.Row="0" Grid.Column="1" Spacing="10">
+				<Image Grid.Row="0" Grid.Column="0" Source="{Binding Project.Logo}" WidthRequest="100" HeightRequest="100" />
+				<StackLayout Grid.Row="0" Grid.Column="1" Spacing="10" Padding="0,5">
 					<Label Style="{StaticResource Label_Header}" Text="{Binding Project.Name}" />
 					<Label Style="{StaticResource Label_Default}" Text="{Binding Project.ShortDescription}" />
 					<Label Style="{StaticResource Label_Default}" Text="{Binding Project.Duration}" HorizontalOptions="FillAndExpand" />
+				</StackLayout>
+
+				<StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Spacing="20">
+					<Label Style="{StaticResource Label_Default}" Text="{Binding Project.Description}" />
+					<BoxView Style="{StaticResource BoxView_Dividor}" />
+					<Label Style="{StaticResource Label_Header}" Text="TECHNOLOGY" />
+					<Label Style="{StaticResource Label_Default}" Text="{Binding Project.Technology}" />
+					<BoxView Style="{StaticResource BoxView_Dividor}" />
+					
+					<Label Style="{StaticResource Label_Header}" Text="RESPONSIBILITY" />
+					<Label Style="{StaticResource Label_Default}" Text="{Binding Project.Responsibility}" />
 				</StackLayout>
 			</Grid>
 		</Grid>
