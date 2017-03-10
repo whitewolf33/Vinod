@@ -72,9 +72,9 @@ namespace Resume
 			});
 			masterPageItems.Add(new MenuItem
 			{
-				Title = "Settings",
+				Title = "Preferences",
 				Icon = "settings.png",
-				Target = typeof(ProjectDetailPage)
+				Target = typeof(PreferencesPage)
 			});
 			masterPageItems.Add(new MenuItem
 			{

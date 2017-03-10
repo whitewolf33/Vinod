@@ -36,7 +36,7 @@
     <OutputPath>bin\iPhone\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: whitewolf33@gmail.com (T972D65KVE)</CodesignKey>
     <MtouchUseSGen>true</MtouchUseSGen>
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchFloat32>true</MtouchFloat32>
@@ -47,6 +47,7 @@
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
     <BuildIpa>true</BuildIpa>
+    <CodesignProvision>cd3d8743-bc8f-49c2-9d16-8aeb44807acc</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>
@@ -173,14 +174,12 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\LineEntryRenderer.cs" />
     <Compile Include="Renderers\RoundedBoxViewRenderer.cs" />
+    <Compile Include="Renderers\ListViewExtRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Roboto-Bold.ttf" />
     <BundleResource Include="Resources\Roboto-Light.ttf" />
     <BundleResource Include="Resources\Roboto-Regular.ttf" />
-    <BundleResource Include="Resources\background.png" />
-    <BundleResource Include="Resources\background%402x.png" />
-    <BundleResource Include="Resources\background%403x.png" />
     <BundleResource Include="Resources\email.png" />
     <BundleResource Include="Resources\email%402x.png" />
     <BundleResource Include="Resources\email%403x.png" />
@@ -259,6 +258,9 @@
     <BundleResource Include="Resources\touchon.png" />
     <BundleResource Include="Resources\touchon%402x.png" />
     <BundleResource Include="Resources\touchon%403x.png" />
+    <BundleResource Include="Resources\background.png" />
+    <BundleResource Include="Resources\background%402x.png" />
+    <BundleResource Include="Resources\background%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

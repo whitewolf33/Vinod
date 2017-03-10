@@ -423,5 +423,26 @@ namespace Resume
 				}
 			});
 		}
+
+		public async Task<List<Preference>> GetPreferences()
+		{
+			return await Task.Run(() =>
+			{
+				try
+				{
+					List<Preference> preferences = new List<Preference>();
+					preferences.Add(new Preference { Name = "Enable TouchID", Description = "Tap to enable TouchID for easy and secure access to this app", Icon = "touchon.png" });
+					preferences.Add(new Preference { Name = "Print Resume", Description = "Tap to send this resume to a printer in your network", Icon = "print.png" });
+					preferences.Add(new Preference { Name = "Share Resume", Description = "Tap to share this resume with others via email or social media", Icon = "share.png" });
+					preferences.Add(new Preference { Name = "Your favourites & notes", Description = "Tap to view your favourires and notes saved in this app", Icon = "favourite.png" });
+					return preferences;
+				}
+				catch (Exception ex)
+				{
+					MyInsights.Report(ex);
+					return new List<Preference>();
+				}
+			});
+		}
 	}
 }

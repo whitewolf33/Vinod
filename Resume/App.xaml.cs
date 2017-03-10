@@ -39,6 +39,9 @@ namespace Resume
 			Container.RegisterTypeForNavigation<ProjectDetailPage>();
 			Container.RegisterType<ProjectDetailPageViewModel>(new ContainerControlledLifetimeManager());
 
+			Container.RegisterTypeForNavigation<PreferencesPage>();
+			Container.RegisterType<PreferencesPageViewModel>();
+
 			Container.RegisterTypeForNavigation<NavigationPageEx>();
 
 			/**************** Instance Registration ***********/

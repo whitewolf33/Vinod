@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.MenuPage" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="true" Icon="menu.png" Title="Vinod Srinivasan">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.MenuPage" 
+		 xmlns:local="clr-namespace:Resume;assembly=Resume" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
+		prism:ViewModelLocator.AutowireViewModel="true" Icon="menu.png" Title="Vinod Srinivasan">
 	<ContentPage.Content>
 		<StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#2A2929" Spacing="10" Padding="0">
 			<StackLayout BackgroundColor="{StaticResource NavBarBackgroundColor}" Padding="0,20" Spacing="0">
@@ -41,7 +43,7 @@
 				<Button Style="{StaticResource Button_GitHub}" Command="{Binding OpenSocialCommand}" CommandParameter="GitHub" />
 			</StackLayout>
 			<!--<BoxView Style="{StaticResource BoxView_Dividor}" />-->
-			<ListView x:Name="listView" HorizontalOptions="FillAndExpand" SeparatorVisibility="None" HasUnevenRows="true" ItemsSource="{Binding MenuItems}" BackgroundColor="Transparent">
+			<local:ListViewEx x:Name="listView" HorizontalOptions="FillAndExpand" SeparatorVisibility="None" HasUnevenRows="true" ItemsSource="{Binding MenuItems}" BackgroundColor="Transparent">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
@@ -55,7 +57,7 @@
 						</ViewCell>
 					</DataTemplate>
 				</ListView.ItemTemplate>
-			</ListView>
+			</local:ListViewEx>
 			<StackLayout HorizontalOptions="Center" VerticalOptions="End" Padding="0,10">
 				<Label Text="App Version" Style="{StaticResource Label_Header}" FontSize="12" />
 				<Label Text="v 1.0.0" Style="{StaticResource Label_Default}" FontAttributes="Italic" FontSize="12" />

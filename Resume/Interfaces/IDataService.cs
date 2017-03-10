@@ -12,5 +12,7 @@ namespace Resume
 		Task<List<GroupedDisplay>> GetTechnicalSkills();
 
 		Task<List<Project>> GetProjectsList();
+
+		Task<List<Preference>> GetPreferences();
 	}
 }

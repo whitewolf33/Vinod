@@ -65,6 +65,9 @@
     <EmbeddedResource Include="Views\ProjectView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PreferencesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -132,6 +135,11 @@
       <DependentUpon>ProjectView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ProjectViewViewModel.cs" />
+    <Compile Include="Pages\PreferencesPage.xaml.cs">
+      <DependentUpon>PreferencesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\PreferencesPageViewModel.cs" />
+    <Compile Include="Models\Preference.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">
