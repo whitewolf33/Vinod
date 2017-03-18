@@ -108,6 +108,21 @@
     <Reference Include="Plugin.Share">
       <HintPath>..\packages\Plugin.Share.4.0.3\lib\MonoAndroid10\Plugin.Share.dll</HintPath>
     </Reference>
+    <Reference Include="Acr.Biometrics">
+      <HintPath>..\packages\Acr.Biometrics.2.0.3\lib\MonoAndroid10\Acr.Biometrics.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.Biometrics.Interface">
+      <HintPath>..\packages\Acr.Biometrics.2.0.3\lib\MonoAndroid10\Acr.Biometrics.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="SamsungPass">
+      <HintPath>..\packages\Acr.Biometrics.2.0.3\lib\MonoAndroid10\SamsungPass.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.5.4\lib\MonoAndroid10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.5.4\lib\MonoAndroid10\Plugin.Settings.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Resume\Resume.csproj">
@@ -120,6 +135,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MainApplication.cs" />
+    <Compile Include="Helpers\Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

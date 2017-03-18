@@ -1,13 +1,30 @@
 ﻿using System;
+using Prism.Mvvm;
+using Common;
+
 namespace Resume
 {
-	public class Preference
+	public class Preference : BindableBase, IIndexed
 	{
+		public int Index { get; set; }
+
 		public string Name { get; set; }
 
-		public string Description { get; set; }
+		string description;
+		public string Description
+		{
+			get { return description; }
+			set { SetProperty(ref description, value); }
+		}
 
-		public string Icon { get; set; }
+		string _icon;
+		public string Icon
+		{
+			get { return _icon; }
+			set { SetProperty(ref _icon, value); }
+		}
+
+		public Action<Preference> PreferenceAction { get; set; }
 
 	}
 }

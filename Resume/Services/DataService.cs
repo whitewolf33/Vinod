@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Common;
+using Resume.Helpers;
 
 namespace Resume
 {
@@ -428,10 +429,16 @@ namespace Resume
 		{
 			return await Task.Run(() =>
 			{
-				try
-				{
-					List<Preference> preferences = new List<Preference>();
-					preferences.Add(new Preference { Name = "Enable TouchID", Description = "Tap to enable TouchID for easy and secure access to this app", Icon = "touchon.png" });
+			try
+			{
+				List<Preference> preferences = new List<Preference>();
+					preferences.Add(new Preference
+					{
+						Name = "Enable TouchID",
+						Description = Constants.TouchID.DisabledDesc,
+						Icon = Settings.UseTouchID ? Constants.TouchID.EnabledIcon : Constants.TouchID.DisabledIcon,
+						PreferenceAction = new Action<Preference>(async (pref) => { await SetupTouchID(pref);})
+					});
 					preferences.Add(new Preference { Name = "Print Resume", Description = "Tap to send this resume to a printer in your network", Icon = "print.png" });
 					preferences.Add(new Preference { Name = "Share Resume", Description = "Tap to share this resume with others via email or social media", Icon = "share.png" });
 					preferences.Add(new Preference { Name = "Your favourites & notes", Description = "Tap to view your favourires and notes saved in this app", Icon = "favourite.png" });
@@ -444,5 +451,27 @@ namespace Resume
 				}
 			});
 		}
+
+		private async Task SetupTouchID(Preference pref)
+		{
+			await Task.Run(async () =>
+			{
+				bool touchIdAvailable = await Acr.Biometrics.Biometrics.Instance.IsAvailable();
+				touchIdAvailable = true;
+				if (touchIdAvailable)
+				{
+					// Toggle TouchID Enabled
+					Settings.UseTouchID = !Settings.UseTouchID;
+				}
+				else
+				{
+					//Throw error Msg 
+				}
+
+				pref.Icon = Settings.UseTouchID ? Constants.TouchID.EnabledIcon : Constants.TouchID.DisabledIcon;
+				pref.Description = Settings.UseTouchID ? Constants.TouchID.EnabledDesc : Constants.TouchID.DisabledDesc;
+			});
+		}
 	}
 }
+
