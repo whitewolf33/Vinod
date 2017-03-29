@@ -142,6 +142,7 @@
     <Compile Include="Models\Preference.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="Interfaces\IPrintService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Prism">

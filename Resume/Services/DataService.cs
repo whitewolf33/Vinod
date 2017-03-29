@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Common;
 using Resume.Helpers;
+using Xamarin.Forms;
 
 namespace Resume
 {
@@ -439,7 +440,19 @@ namespace Resume
 						Icon = Settings.UseTouchID ? Constants.TouchID.EnabledIcon : Constants.TouchID.DisabledIcon,
 						PreferenceAction = new Action<Preference>(async (pref) => { await SetupTouchID(pref);})
 					});
-					preferences.Add(new Preference { Name = "Print Resume", Description = "Tap to send this resume to a printer in your network", Icon = "print.png" });
+					preferences.Add(new Preference
+					{
+						Name = "Print Resume",
+						Description = "Tap to send this resume to a printer in your network",
+						Icon = "print.png",
+						PreferenceAction = new Action<Preference>((pref) => {
+							var printService = Xamarin.Forms.DependencyService.Get<IPrintService>();
+							if (printService != null)
+							{
+								Device.BeginInvokeOnMainThread(()=> printService.Print());
+							}
+						})
+					});
 					preferences.Add(new Preference { Name = "Share Resume", Description = "Tap to share this resume with others via email or social media", Icon = "share.png" });
 					preferences.Add(new Preference { Name = "Your favourites & notes", Description = "Tap to view your favourires and notes saved in this app", Icon = "favourite.png" });
 					return preferences;

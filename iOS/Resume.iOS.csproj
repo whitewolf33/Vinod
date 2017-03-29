@@ -47,7 +47,7 @@
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
     <BuildIpa>true</BuildIpa>
-    <CodesignProvision>cd3d8743-bc8f-49c2-9d16-8aeb44807acc</CodesignProvision>
+    <CodesignProvision>45a61726-320d-44fe-8a33-df12a13f3894</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>
@@ -87,7 +87,7 @@
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
     <BuildIpa>true</BuildIpa>
-    <CodesignProvision>9b4ec585-2d05-4914-914e-ee491c35887c</CodesignProvision>
+    <CodesignProvision>45a61726-320d-44fe-8a33-df12a13f3894</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -172,6 +172,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Renderers\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -188,6 +189,8 @@
     <Compile Include="Renderers\RoundedBoxViewRenderer.cs" />
     <Compile Include="Renderers\ListViewExtRenderer.cs" />
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="Services\PrintService.cs" />
+    <Compile Include="Renderers\PrintPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Roboto-Bold.ttf" />
