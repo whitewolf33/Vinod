@@ -14,16 +14,16 @@
 				<Grid Grid.Row="0" Grid.Column="0" ColumnSpacing="0">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*" />
-						<ColumnDefinition Width="32" />
+						<!--<ColumnDefinition Width="32" />-->
 					</Grid.ColumnDefinitions>
 					<Image Style="{StaticResource Image_Profile}" HorizontalOptions="Center" VerticalOptions="Center" />
-					<StackLayout Grid.Row="0" Grid.Column="1" Spacing="20">
+					<!--<StackLayout Grid.Row="0" Grid.Column="1" Spacing="20">
 						<Button Style="{StaticResource Button_Email}" Command="{Binding OpenSocialCommand}" CommandParameter="Email" />
 						<Button Style="{StaticResource Button_Facebook}" Command="{Binding OpenSocialCommand}" CommandParameter="Facebook" />
 						<Button Style="{StaticResource Button_LinkedIn}" Command="{Binding OpenSocialCommand}" CommandParameter="LinkedIn" />
 						<Button Style="{StaticResource Button_Twitter}" Command="{Binding OpenSocialCommand}" CommandParameter="Twitter" />
 						<Button Style="{StaticResource Button_GitHub}" Command="{Binding OpenSocialCommand}" CommandParameter="GitHub" />
-					</StackLayout>
+					</StackLayout>-->
 				</Grid>
 				<StackLayout Grid.Row="1" Grid.Column="0" Padding="0" Spacing="10">
 					<Label Text="Enter access code to continue..." Style="{StaticResource Label_SubHeader}" HeightRequest="25" />
