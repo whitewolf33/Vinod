@@ -2,7 +2,7 @@
 
 namespace Resume
 {
-	public partial class WorkExperiencePage : CarouselPage
+	public partial class WorkExperiencePage : ContentPage
 	{
 		public WorkExperiencePage()
 		{
