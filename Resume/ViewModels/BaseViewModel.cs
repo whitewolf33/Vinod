@@ -128,6 +128,11 @@ namespace Resume
 		{
 
 		}
+
+		public void OnNavigatingTo(NavigationParameters parameters)
+		{
+			
+		}
 		#endregion
 	}
 }
