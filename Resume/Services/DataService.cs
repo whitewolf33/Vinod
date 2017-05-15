@@ -81,7 +81,8 @@ namespace Resume
 				Index = 1,
 				Company = "Telstra Health",
 				Address = " Level 3, 222, QV Building, Melbourne, VIC - 3000",
-				WorkPeriod = "Dec 2015 - CURRENT",
+				StartDate = new DateTime(2015, 12, 07),
+				EndDate = DateTime.Today,
 				Latitude = -37.8106622,
 				Longitude = 144.9635376,
 				CompanyLogo = "thealth.png"
@@ -91,7 +92,8 @@ namespace Resume
 				Index = 2,
 				Company = "City Holdings Aus Pty Ltd",
 				Address = " Level 3, 222, QV Building, Melbourne, VIC - 3000",
-				WorkPeriod = "Jun 2015 - Dec 2015",
+				StartDate = new DateTime(2015, 06, 01),
+				EndDate = new DateTime(2015, 12, 01),
 				Latitude = -37.9194124,
 				Longitude = 145.1577831,
 				CompanyLogo = "city.png"
@@ -101,7 +103,8 @@ namespace Resume
 				Index = 3,
 				Company = "FRED IT Group",
 				Address = " Level 3, 222, QV Building, Melbourne, VIC - 3000",
-				WorkPeriod = "Jan 2008 - Jun 2015",
+				StartDate = new DateTime(2008, 01, 01),
+				EndDate = new DateTime(2015, 01, 01),
 				Latitude = -37.7993071,
 				Longitude = 144.9976491,
 				CompanyLogo = "fred.png"
@@ -111,7 +114,8 @@ namespace Resume
 				Index = 4,
 				Company = "Cadability Pty Ltd",
 				Address = " Level 3, 222, QV Building, Melbourne, VIC - 3000",
-				WorkPeriod = "Jan 2008 - Jun 2015",
+				StartDate = new DateTime(2008, 01, 01),
+				EndDate = new DateTime(2015, 06, 01),
 				Latitude = -37.7993071,
 				Longitude = 144.9976491,
 				CompanyLogo = "fred.png"
@@ -120,7 +124,9 @@ namespace Resume
 			Project cpc = new Project();
 			cpc.Name = "Care Plan Connect";
 			cpc.Logo = "cpc.png";
-			cpc.Duration = "Dec 2015 - June 2016";
+			cpc.StartDate = new DateTime(2015, 12, 01);
+			cpc.EndDate = new DateTime(2016, 06, 01);
+			//cpc.Duration = "Dec 2015 - June 2016";
 
 			cpc.ShortDescription = "iOS and Android App";
 			cpc.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
@@ -136,7 +142,9 @@ namespace Resume
 			Project cc = new Project();
 			cc.Name = "Consumer Channel";
 			cc.Logo = "consumerchannel.png";
-			cc.Duration = "July 2016 - September 2016";
+			cpc.StartDate = new DateTime(2016, 07, 01);
+			cpc.EndDate = new DateTime(2016, 09, 01);
+			//cc.Duration = "July 2016 - September 2016";
 
 			cc.ShortDescription = "iOS and Android App";
 			cc.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
@@ -147,9 +155,11 @@ namespace Resume
 			_telstra.Projects.Add(cc);
 
 			Project hg = new Project();
-			hg.Name = "HealthGateway";
+			hg.Name = "HealthNow";
 			hg.Logo = "healthgateway.png";
-			hg.Duration = "September 2016 - Till date";
+			hg.StartDate = new DateTime(2016, 09, 01);
+			hg.EndDate = DateTime.Today;
+			//hg.Duration = "September 2016 - Till date";
 			hg.ShortDescription = "iOS and Android App";
 			hg.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
 			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
@@ -161,7 +171,9 @@ namespace Resume
 			Project myAssets = new Project();
 			myAssets.Name = "MyAssets";
 			myAssets.Logo = "healthgateway.png";
-			myAssets.Duration = "September 2016 - Till date";
+			myAssets.StartDate = new DateTime(2015, 06, 01);
+			myAssets.EndDate = new DateTime(2015, 08, 01);
+			//myAssets.Duration = "September 2016 - Till date";
 			myAssets.ShortDescription = "iOS and Android App";
 			myAssets.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
 			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
@@ -173,7 +185,8 @@ namespace Resume
 			Project myFM = new Project();
 			myFM.Name = "MyFM";
 			myFM.Logo = "healthgateway.png";
-			myFM.Duration = "September 2016 - Till date";
+			myFM.StartDate = new DateTime(2015, 06, 01);
+			myFM.EndDate = new DateTime(2015, 08, 01);
 			myFM.ShortDescription = "iOS and Android App";
 			myFM.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
 			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
@@ -186,7 +199,9 @@ namespace Resume
 			Project myAvailability = new Project();
 			myAvailability.Name = "MyAvailability";
 			myAvailability.Logo = "healthgateway.png";
-			myAvailability.Duration = "September 2016 - Till date";
+			myAvailability.StartDate = new DateTime(2015, 06, 01);
+			myAvailability.EndDate = new DateTime(2015, 08, 01);
+			//myAvailability.Duration = "September 2016 - Till date";
 			myAvailability.ShortDescription = "iOS and Android App";
 			myAvailability.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
 			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
@@ -198,7 +213,9 @@ namespace Resume
 			Project fredNxtOffice = new Project();
 			fredNxtOffice.Name = "Fred Nxt Office";
 			fredNxtOffice.Logo = "healthgateway.png";
-			fredNxtOffice.Duration = "September 2016 - Till date";
+			fredNxtOffice.StartDate = new DateTime(2015, 06, 01);
+			fredNxtOffice.EndDate = new DateTime(2015, 08, 01);
+			//fredNxtOffice.Duration = "September 2016 - Till date";
 			fredNxtOffice.ShortDescription = "iOS and Android App";
 			fredNxtOffice.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
 			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
@@ -211,7 +228,9 @@ namespace Resume
 			Project fredOffice = new Project();
 			fredOffice.Name = "Fred Office";
 			fredOffice.Logo = "healthgateway.png";
-			fredOffice.Duration = "September 2016 - Till date";
+			fredOffice.StartDate = new DateTime(2015, 06, 01);
+			fredOffice.EndDate = new DateTime(2015, 08, 01);
+			//fredOffice.Duration = "September 2016 - Till date";
 			fredOffice.ShortDescription = "iOS and Android App";
 			fredOffice.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
 			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
@@ -223,7 +242,9 @@ namespace Resume
 			Project fredRapid = new Project();
 			fredRapid.Name = "Fred Rapid";
 			fredRapid.Logo = "healthgateway.png";
-			fredRapid.Duration = "September 2016 - Till date";
+			fredRapid.StartDate = new DateTime(2015, 06, 01);
+			fredRapid.EndDate = new DateTime(2015, 08, 01);
+			//fredRapid.Duration = "September 2016 - Till date";
 			fredRapid.ShortDescription = "iOS and Android App";
 			fredRapid.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
 			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
@@ -235,7 +256,9 @@ namespace Resume
 			Project scoringSystem = new Project();
 			scoringSystem.Name = "Data Capture Systems";
 			scoringSystem.Logo = "healthgateway.png";
-			scoringSystem.Duration = "September 2016 - Till date";
+			scoringSystem.StartDate = new DateTime(2015, 06, 01);
+			scoringSystem.EndDate = new DateTime(2015, 08, 01);
+			//scoringSystem.Duration = "September 2016 - Till date";
 			scoringSystem.ShortDescription = "iOS and Android App";
 			scoringSystem.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
 			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
@@ -247,7 +270,9 @@ namespace Resume
 			Project delivery = new Project();
 			delivery.Name = "Data Delivery Systems";
 			delivery.Logo = "healthgateway.png";
-			delivery.Duration = "September 2016 - Till date";
+			delivery.StartDate = new DateTime(2015, 06, 01);
+			delivery.EndDate = new DateTime(2015, 08, 01);
+			//delivery.Duration = "September 2016 - Till date";
 			delivery.ShortDescription = "iOS and Android App";
 			delivery.Description = "Care Plan Connect is a smarter way of helping Type 2 Diabetes patients keep their blood sugar level under control.....";
 			//hg.Technology = "Xamarin Forms, Web API, Azure PaaS SQL Server";
@@ -257,6 +282,21 @@ namespace Resume
 			_cadability.Projects.Add(delivery);
 
 			Projects = _telstra.Projects.Union(_city.Projects).Union(_fred.Projects).Union(_cadability.Projects).ToList();
+		}
+
+		public async Task<List<Timeline>> GetTimeline()
+		{
+			var timelineList = new List<Timeline>();
+			timelineList.Add(new Timeline { Id = 1, Year = 1983, Title = "Born", SubTitle = "Chennai, India" });
+			timelineList.Add(new Timeline { Id = 2, Year = 2004, Title = "B.Tech I.T.", SubTitle = "University of Madras, India" });
+			timelineList.Add(new Timeline { Id = 3, Year = 2006, Title = "M.Tech I.T.", SubTitle = "R.M.I.T, Melblourne, Australia" });
+			timelineList.Add(new Timeline { Id = 4, Year = 2008, Title = "FRED I.T.", SubTitle = "Development Consultant" });
+			timelineList.Add(new Timeline { Id = 5, Year = 2012, Title = "FRED I.T.", SubTitle = "Development Team Lead" });
+			timelineList.Add(new Timeline { Id = 6, Year = 2015, Title = "FRED I.T.", SubTitle = "Senior Development Consultant" });
+			timelineList.Add(new Timeline { Id = 7, Year = 2015, Title = "City Holdings", SubTitle = "Xamarin Developer" });
+			timelineList.Add(new Timeline { Id = 8, Year = 2015, Title = "Telstra Health", SubTitle = "Senior Technical Specialist" });
+
+			return await Task.FromResult(timelineList);
 		}
 
 		public async Task<List<GroupedDisplay>> GetQualifications()
@@ -430,26 +470,27 @@ namespace Resume
 		{
 			return await Task.Run(() =>
 			{
-			try
-			{
-				List<Preference> preferences = new List<Preference>();
+				try
+				{
+					List<Preference> preferences = new List<Preference>();
 					preferences.Add(new Preference
 					{
 						Name = "Enable TouchID",
 						Description = Constants.TouchID.DisabledDesc,
 						Icon = Settings.UseTouchID ? Constants.TouchID.EnabledIcon : Constants.TouchID.DisabledIcon,
-						PreferenceAction = new Action<Preference>(async (pref) => { await SetupTouchID(pref);})
+						PreferenceAction = new Action<Preference>(async (pref) => { await SetupTouchID(pref); })
 					});
 					preferences.Add(new Preference
 					{
 						Name = "Print Resume",
 						Description = "Tap to send this resume to a printer in your network",
 						Icon = "print.png",
-						PreferenceAction = new Action<Preference>((pref) => {
+						PreferenceAction = new Action<Preference>((pref) =>
+						{
 							var printService = Xamarin.Forms.DependencyService.Get<IPrintService>();
 							if (printService != null)
 							{
-								Device.BeginInvokeOnMainThread(()=> printService.Print());
+								Device.BeginInvokeOnMainThread(() => printService.Print());
 							}
 						})
 					});

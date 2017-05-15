@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Common;
+using System;
 
 namespace Resume
 {
@@ -15,7 +16,11 @@ namespace Resume
 
 		public double Longitude { get; set; }
 
-		public string WorkPeriod { get; set; }
+		public DateTime StartDate { get; set; }
+
+		public DateTime EndDate { get; set; }
+
+		public string WorkPeriod { get { return String.Format("{0} - {1}", StartDate.ToString("MMM yyyy"), EndDate.ToString("MMM yyyy")); } }
 
 		public string CompanyLogo { get; set; }
 

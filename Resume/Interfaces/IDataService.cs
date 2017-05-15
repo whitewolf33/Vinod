@@ -5,6 +5,8 @@ namespace Resume
 {
 	public interface IDataService
 	{
+		Task<List<Timeline>> GetTimeline();
+
 		Task<List<GroupedDisplay>> GetQualifications();
 
 		Task<List<WorkExperience>> GetWorkExperiences();

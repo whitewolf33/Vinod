@@ -1,7 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.AboutMePage"
-		xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="true" 
-		xmlns:common="clr-namespace:Common;assembly=Common" BackgroundImage="background.png" Title="About Me">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Resume.AboutMePage" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="true" xmlns:local="clr-namespace:Resume;assembly=Resume" xmlns:common="clr-namespace:Common;assembly=Common" BackgroundImage="background.png" Title="About Me">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<DataTemplate x:Key="oddNumberTemplate">
+				<ViewCell>
+					<ViewCell.View>
+						<Grid HorizontalOptions="FillAndExpand" ColumnSpacing="0">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="2" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<BoxView Grid.Row="0" Grid.Column="1" Color="{StaticResource AppHighlightColor}" VerticalOptions="FillAndExpand" />
+							<StackLayout Grid.Row="0" Grid.Column="0">
+								<StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+									<Label Text="{Binding Title}" Style="{StaticResource Label_Default}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+									<Label Text="{Binding Year}" Style="{StaticResource Label_SubHeader}" HorizontalOptions="End" />
+									<BoxView Color="{StaticResource AppHighlightColor}" WidthRequest="10" HeightRequest="2" HorizontalOptions="End" VerticalOptions="Center"/>
+								</StackLayout>
+								<Label Text="{Binding SubTitle}" Style="{StaticResource Label_Default}" />
+							</StackLayout>
+						</Grid>
+					</ViewCell.View>
+				</ViewCell>
+			</DataTemplate>
+			<DataTemplate x:Key="evenNumberTemplate">
+				<ViewCell>
+					<ViewCell.View>
+						<Grid HorizontalOptions="FillAndExpand" ColumnSpacing="0">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="2" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<BoxView Grid.Row="0" Grid.Column="1" Color="{StaticResource AppHighlightColor}" VerticalOptions="FillAndExpand" />
+							<StackLayout Grid.Row="0" Grid.Column="2">
+								<StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+									<BoxView Color="{StaticResource AppHighlightColor}" WidthRequest="10" HeightRequest="2" HorizontalOptions="Start" VerticalOptions="Center"/>
+									<Label Text="{Binding Year}" Style="{StaticResource Label_SubHeader}" />
+									<Label Text="{Binding Title}" Style="{StaticResource Label_Default}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" />
+								</StackLayout>
+								<Label Text="{Binding SubTitle}" Style="{StaticResource Label_Default}" />
+							</StackLayout>
+						</Grid>
+					</ViewCell.View>
+				</ViewCell>
+			</DataTemplate>
+			<local:TimelineTemplateSelector x:Key="timelineTemplateSelector" OddTemplate="{StaticResource oddNumberTemplate}" EvenTemplate="{StaticResource evenNumberTemplate}" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
 	<ContentPage.Content>
+		<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Padding="20">
+			<ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" ItemsSource="{Binding TimelineList}" HasUnevenRows="true" SeparatorVisibility="None" ItemTemplate="{StaticResource timelineTemplateSelector}">
+				<ListView.Header>
+					<StackLayout HorizontalOptions="FillAndExpand" Spacing="15">
+						<Label Text="Thank you for downloading the app and getting to know more about me." Style="{StaticResource Label_Default}" />
+						<BoxView Style="{StaticResource BoxView_Dividor}" />
+						<Label HorizontalOptions="Center" Text="1983" Style="{StaticResource Label_Header}" />
+					</StackLayout>
+				</ListView.Header>
+				<ListView.Footer>
+					<Label HorizontalOptions="Center" Text="2017" Style="{StaticResource Label_Header}" />
+				</ListView.Footer>
+			</ListView>
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

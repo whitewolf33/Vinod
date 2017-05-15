@@ -143,6 +143,7 @@
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Helpers\Constants.cs" />
     <Compile Include="Interfaces\IPrintService.cs" />
+    <Compile Include="Utility\TimelineTemplateSelector.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.ServiceLocation">
