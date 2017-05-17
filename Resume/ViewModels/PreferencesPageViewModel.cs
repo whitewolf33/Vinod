@@ -60,7 +60,7 @@ namespace Resume
 				if (preference.PreferenceAction != null)
 				{
 					preference.PreferenceAction.Invoke(preference);
-					OnPropertyChanged("Icon");
+					RaisePropertyChanged("Icon");
 				}
 			});
 

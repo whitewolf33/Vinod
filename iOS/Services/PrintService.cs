@@ -14,7 +14,7 @@ namespace Resume.iOS
 		{
 			// Get a reference to the singleton iOS printing concierge
 			UIPrintInteractionController printController = UIPrintInteractionController.SharedPrintController;
-
+			//printController.PrintingItem = null;
 			// Instruct the printing concierge to use our custom UIPrintPageRenderer subclass when printing this job
 			printController.PrintPageRenderer = new PrintPageRenderer();
 
