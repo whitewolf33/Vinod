@@ -173,6 +173,7 @@
     <Folder Include="Resources\" />
     <Folder Include="Renderers\" />
     <Folder Include="Services\" />
+    <Folder Include="Resources\Resume\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -277,6 +278,7 @@
     <BundleResource Include="Resources\background.png" />
     <BundleResource Include="Resources\background%402x.png" />
     <BundleResource Include="Resources\background%403x.png" />
+    <BundleResource Include="Resources\resume.pdf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.5.239-pre3\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.5.239-pre3\build\netstandard1.0\Xamarin.Forms.targets')" />

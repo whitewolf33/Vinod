@@ -4,6 +4,7 @@ using UIKit;
 using Xamarin.Forms;
 using Resume.iOS;
 using CoreFoundation;
+using System.IO;
 
 [assembly: Dependency(typeof(PrintService))]
 namespace Resume.iOS
@@ -12,27 +13,35 @@ namespace Resume.iOS
 	{
 		public void Print()
 		{
-			// Get a reference to the singleton iOS printing concierge
-			UIPrintInteractionController printController = UIPrintInteractionController.SharedPrintController;
-			//printController.PrintingItem = null;
-			// Instruct the printing concierge to use our custom UIPrintPageRenderer subclass when printing this job
-			printController.PrintPageRenderer = new PrintPageRenderer();
+			
+			var fullPath =Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "/resume.pdf";
+			bool exists = File.Exists(fullPath);
 
-			// Ask for a print job object and configure its settings to tailor the print request
-			UIPrintInfo info = UIPrintInfo.PrintInfo;
+			if (exists)
+			{
+				var pdf = NSData.FromFile(fullPath);
+				// Get a reference to the singleton iOS printing concierge
+				UIPrintInteractionController printController = UIPrintInteractionController.SharedPrintController;
+				printController.PrintingItem = pdf;
+				// Instruct the printing concierge to use our custom UIPrintPageRenderer subclass when printing this job
+				printController.PrintPageRenderer = new PrintPageRenderer();
 
-			// B&W or color, normal quality output for mixed text, graphics, and images
-			info.OutputType = UIPrintInfoOutputType.General;
+				// Ask for a print job object and configure its settings to tailor the print request
+				UIPrintInfo info = UIPrintInfo.PrintInfo;
 
-			// Select the job named this in the printer queue to cancel our print request.
-			info.JobName = "Resume";
+				// B&W or color, normal quality output for mixed text, graphics, and images
+				info.OutputType = UIPrintInfoOutputType.General;
 
-			// Instruct the printing concierge to use our custom print job settings.
-			printController.PrintInfo = info;
+				// Select the job named this in the printer queue to cancel our print request.
+				info.JobName = "Resume";
 
-			// Present the standard iOS Print Panel that allows you to pick the target Printer, number of pages, double-sided, etc.
+				// Instruct the printing concierge to use our custom print job settings.
+				printController.PrintInfo = info;
 
-			printController.Present(true, PrintingCompleted);
+				// Present the standard iOS Print Panel that allows you to pick the target Printer, number of pages, double-sided, etc.
+
+				printController.Present(true, PrintingCompleted);
+			}
 
 		}
 
