@@ -494,7 +494,22 @@ namespace Resume
 							}
 						})
 					});
-					preferences.Add(new Preference { Name = "Share Resume", Description = "Tap to share this resume with others via email or social media", Icon = "share.png" });
+					preferences.Add(new Preference
+					{
+						Name = "Share Resume",
+						Description = "Tap to share this resume with others via email or social media",
+						Icon = "share.png",
+						PreferenceAction = new Action<Preference>((pref) =>
+						{
+							var msg = new Plugin.Share.Abstractions.ShareMessage();
+							msg.Title = "Vinod's resume";
+							msg.Text = "Please find below the link to the resume of Vinod Srinivasan.";
+							msg.Url = "https://vinodresume.azurewebsites.net/resume/";
+
+							Plugin.Share.CrossShare.Current.Share(msg);
+
+						})
+					});
 					preferences.Add(new Preference { Name = "Your favourites & notes", Description = "Tap to view your favourires and notes saved in this app", Icon = "favourite.png" });
 					return preferences;
 				}
