@@ -81,7 +81,7 @@
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
     <BuildIpa>true</BuildIpa>
-    <CodesignProvision>45a61726-320d-44fe-8a33-df12a13f3894</CodesignProvision>
+    <CodesignProvision>iOS Team Provisioning Profile: au.com.vinod.resume</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

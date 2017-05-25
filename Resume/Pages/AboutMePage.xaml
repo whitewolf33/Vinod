@@ -5,20 +5,20 @@
 			<DataTemplate x:Key="oddNumberTemplate">
 				<ViewCell>
 					<ViewCell.View>
-						<Grid HorizontalOptions="FillAndExpand" ColumnSpacing="0">
+						<Grid HorizontalOptions="FillAndExpand" ColumnSpacing="0" Padding="20,0">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="*" />
 								<ColumnDefinition Width="2" />
 								<ColumnDefinition Width="*" />
 							</Grid.ColumnDefinitions>
 							<BoxView Grid.Row="0" Grid.Column="1" Color="{StaticResource AppHighlightColor}" VerticalOptions="FillAndExpand" />
-							<StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand">
+							<StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" Spacing="0">
 								<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
 									<Label Text="{Binding Title}" Style="{StaticResource Label_Default}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
 									<Label Text="{Binding Year}" Style="{StaticResource Label_Header}" HorizontalOptions="EndAndExpand" />
 									<BoxView Color="{StaticResource AppHighlightColor}" WidthRequest="10" HeightRequest="2" HorizontalOptions="End" VerticalOptions="Center"/>
 								</StackLayout>
-								<Label Text="{Binding SubTitle}" Style="{StaticResource Label_Default}" Margin="0,0,15,0" HorizontalOptions="End"/>
+								<Label Text="{Binding SubTitle}" Style="{StaticResource Label_Default}" Margin="0,0,15,0" HorizontalOptions="Start"/>
 							</StackLayout>
 						</Grid>
 					</ViewCell.View>
@@ -27,20 +27,20 @@
 			<DataTemplate x:Key="evenNumberTemplate">
 				<ViewCell>
 					<ViewCell.View>
-						<Grid HorizontalOptions="FillAndExpand" ColumnSpacing="0">
+						<Grid HorizontalOptions="FillAndExpand" ColumnSpacing="0" Padding="20,0">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="*" />
 								<ColumnDefinition Width="2" />
 								<ColumnDefinition Width="*" />
 							</Grid.ColumnDefinitions>
 							<BoxView Grid.Row="0" Grid.Column="1" Color="{StaticResource AppHighlightColor}" VerticalOptions="FillAndExpand" />
-							<StackLayout Grid.Row="0" Grid.Column="2"  HorizontalOptions="FillAndExpand">
+							<StackLayout Grid.Row="0" Grid.Column="2"  HorizontalOptions="FillAndExpand" Spacing="0">
 								<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
 									<BoxView Color="{StaticResource AppHighlightColor}" WidthRequest="10" HeightRequest="2" HorizontalOptions="Start" VerticalOptions="Center"/>
 									<Label Text="{Binding Year}" Style="{StaticResource Label_Header}" HorizontalOptions="StartAndExpand" />
 									<Label Text="{Binding Title}" Style="{StaticResource Label_Default}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End"/>
 								</StackLayout>
-								<Label Text="{Binding SubTitle}" Style="{StaticResource Label_Default}" Margin="15,0,0,0"/>
+								<Label Text="{Binding SubTitle}" Style="{StaticResource Label_Default}" Margin="15,0,0,0" HorizontalTextAlignment="End"/>
 							</StackLayout>
 						</Grid>
 					</ViewCell.View>
@@ -50,10 +50,10 @@
 		</ResourceDictionary>
 	</ContentPage.Resources>
 	<ContentPage.Content>
-		<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Padding="20">
-			<ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" ItemsSource="{Binding TimelineList}" HasUnevenRows="true" SeparatorVisibility="None" ItemTemplate="{StaticResource timelineTemplateSelector}">
+		<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Padding="0">
+			<common:ListViewExt HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" ItemsSource="{Binding TimelineList}" HasUnevenRows="true" SeparatorVisibility="None" ItemTemplate="{StaticResource timelineTemplateSelector}">
 				<ListView.Header>
-					<StackLayout HorizontalOptions="FillAndExpand" Spacing="15">
+					<StackLayout HorizontalOptions="FillAndExpand" Spacing="15" Padding="20,20,20,0">
 						<Label Text="Thank you for downloading the app and getting to know more about me." Style="{StaticResource Label_Default}" />
 						<BoxView Style="{StaticResource BoxView_Dividor}" />
 						<!--<Label HorizontalOptions="Center" Text="{Binding StartYear}" Style="{StaticResource Label_Header}" />-->
@@ -62,9 +62,9 @@
 					</StackLayout>
 				</ListView.Header>
 				<ListView.Footer>
-					<Label HorizontalOptions="Center" Text="Today" Style="{StaticResource Label_Header}" />
+					<Label HorizontalOptions="Center" Text="Today" Style="{StaticResource Label_Header}" Margin="20,0"/>
 				</ListView.Footer>
-			</ListView>
+			</common:ListViewExt>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

@@ -43,6 +43,7 @@
     <Compile Include="Controls\RoundedBoxView.cs" />
     <Compile Include="Interfaces\IPage.cs" />
     <Compile Include="Helpers\ObservableCollectionExt.cs" />
+    <Compile Include="Controls\ListViewExt.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
