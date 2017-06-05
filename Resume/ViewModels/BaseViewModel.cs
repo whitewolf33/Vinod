@@ -19,11 +19,11 @@ namespace Resume
 
 		public DelegateCommand<string> CallCommand { get; private set; }
 
-		public DelegateCommand<Location> DirectionTappedCommand { get; private set;}
+		public DelegateCommand<Location> DirectionTappedCommand { get; private set; }
 
 		protected IPageDialogService PageDialogService { get; private set; }
 
-		protected BaseViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : this  (navigationService)
+		protected BaseViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : this(navigationService)
 		{
 			PageDialogService = pageDialogService;
 		}
@@ -54,9 +54,9 @@ namespace Resume
 					return;
 				if (PageDialogService != null)
 				{
-					var confirm = await PageDialogService.DisplayAlertAsync("Confirm", String.Format("Call {0}?",arg.Trim()), "OK", "Cancel");
+					var confirm = await PageDialogService.DisplayAlertAsync("Confirm", String.Format("Call {0}?", arg.Trim()), "OK", "Cancel");
 					if (confirm)
-						Device.OpenUri(new Uri("tel:" + arg.Trim().Replace(" ","")));
+						Device.OpenUri(new Uri("tel:" + arg.Trim().Replace(" ", "")));
 				}
 				else
 				{
@@ -72,13 +72,15 @@ namespace Resume
 				browserOptions.UseSafariWebViewController = true;
 				Color navbarColor =
 				((Color)Application.Current.Resources["NavBarBackgroundColor"]);
-				browserOptions.ChromeToolbarColor = new ShareColor()
+				var shareColor = new ShareColor()
 				{
 					R = (int)navbarColor.R,
 					G = (int)navbarColor.G,
 					B = (int)navbarColor.B,
 					A = (int)navbarColor.A
 				};
+				browserOptions.ChromeToolbarColor = shareColor;
+				browserOptions.SafariBarTintColor= shareColor;
 				CrossShare.Current.OpenBrowser(arg, browserOptions);
 			});
 
@@ -131,7 +133,7 @@ namespace Resume
 
 		public void OnNavigatingTo(NavigationParameters parameters)
 		{
-			
+
 		}
 		#endregion
 	}
