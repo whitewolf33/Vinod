@@ -11,6 +11,8 @@
 			<Color x:Key="NavBarTextColor">#FFFFFF</Color>
 			<Color x:Key="AppTextColor">#FFFFFF</Color>
 			<Color x:Key="AppHighlightColor">#E13B4D</Color>
+            <clr:String x:Key="AboutAppUrl">https://vinodresume.azurewebsites.net/aboutapp</clr:String>
+            
 			<!-- START LABEL STYLES -->
 			<Style x:Key="Label_Default" TargetType="Label">
 				<Setter Property="BackgroundColor" Value="Transparent" />

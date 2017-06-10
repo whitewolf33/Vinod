@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:fwv="clr-namespace:Xam.Plugin.Abstractions;assembly=WebView.Plugin.Abstractions"
+ x:Class="Resume.WebViewPage">
+	<ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0">
+            
+            <fwv:FormsWebView Grid.Row="0" Grid.Column="0" x:Name="inappWebView" ContentType="Internet" Source="{StaticResource AboutAppUrl}"
+                          HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White"/>
+            <ActivityIndicator Grid.Row="0" Grid.Column="0" x:Name="busyIndicator" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="true" IsRunning="true" Color="Gray"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

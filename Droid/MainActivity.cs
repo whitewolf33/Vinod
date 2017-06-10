@@ -19,6 +19,7 @@ namespace Resume.Droid
 			ToolbarResource = Resource.Layout.Toolbar;
 
 			base.OnCreate(bundle);
+            FormsWebViewRenderer.Init();
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
 

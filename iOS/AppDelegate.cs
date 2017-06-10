@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Common;
 using Foundation;
 using UIKit;
+using WebKit;
+using Xam.Plugin.iOS;
 
 namespace Resume.iOS
 {
@@ -12,6 +12,12 @@ namespace Resume.iOS
 	{
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
+			FormsWebViewRenderer.Init();
+			FormsWebViewRenderer.OnControlChanging += (sender, element, control) =>
+		   {
+				var webView = control as WKWebView;
+		   };
+
 			global::Xamarin.Forms.Forms.Init();
 
 			// Code for starting up the Xamarin Test Cloud Agent

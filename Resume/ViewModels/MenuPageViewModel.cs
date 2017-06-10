@@ -80,7 +80,7 @@ namespace Resume
 			{
 				Title = "About this App",
 				Icon = "aboutapp.png",
-				Target = typeof(ProjectDetailPage)
+				Target = typeof(WebViewPage)
 			});
 
 			MenuItems = masterPageItems;

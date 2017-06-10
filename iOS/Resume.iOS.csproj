@@ -154,6 +154,12 @@
     <Reference Include="Plugin.Settings">
       <HintPath>..\packages\Xam.Plugins.Settings.2.5.4\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
     </Reference>
+    <Reference Include="WebView.Plugin.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.WebView.1.5.2\lib\Xamarin.iOS10\WebView.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="WebView.Plugin.iOS">
+      <HintPath>..\packages\Xam.Plugin.WebView.1.5.2\lib\Xamarin.iOS10\WebView.Plugin.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Resume\Resume.csproj">
